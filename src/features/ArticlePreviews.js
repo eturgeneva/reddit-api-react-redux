@@ -22,14 +22,14 @@ export default function ArticlePreviews(props) {
             setArticlePreview(responseObj);
         })
     }, []);
-    function fetchPosts() {
-        props.redditClient.fetchPostsPreviews('TurtleFacts')
-        .then(responseObj => {
-            console.log('responseObj in ArticlePreviews', responseObj);
-            setArticlePreview(responseObj);
-        })
-    }
-    useEffect(fetchPosts, []);
+    // function fetchPosts() {
+    //     props.redditClient.fetchPostsPreviews('TurtleFacts')
+    //     .then(responseObj => {
+    //         console.log('responseObj in ArticlePreviews', responseObj);
+    //         setArticlePreview(responseObj);
+    //     })
+    // }
+    // useEffect(fetchPosts, []);
 
     console.log('turtleFacts article previews', articlePreview);
     if (!articlePreview) {

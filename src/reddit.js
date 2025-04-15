@@ -10,7 +10,8 @@ export class Reddit {
         // Enable later:
         const fetchLink = `${this.apiRoot}/${subredditName}${filter}.json`;
         console.log('fetchLink in reddit.js', fetchLink);
-        await fetch(fetchLink)
+        // await fetch(fetchLink)
+        return fetch(fetchLink)
 
         // await fetch(`${this.apiRoot}/${subredditName}/${filter}.json`)
 
