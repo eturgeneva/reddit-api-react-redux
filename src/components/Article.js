@@ -6,6 +6,7 @@ export default function Article () {
     const [response, setResponse] = useState(null);
 
     useEffect(() => {
+        // Add best to sort by best
         // fetch('https://www.reddit.com/r/TurtleFacts/.json')
         fetch('/mocks/TurtleFacts.json')
         .then(response => {
@@ -27,6 +28,7 @@ export default function Article () {
 
     return (
         <>
+        <h1>Post preview info</h1>
          <div>User: {response.data.children[0].data.author}</div>
          <div>Link to the post: {response.data.children[0].data.permalink}</div>
          {/* <div>Preview: {response.data.children[0].data.preview.images[0].source.url}</div> */}
@@ -39,6 +41,8 @@ export default function Article () {
          <div>Upvotes: {response.data.children[0].data.ups}</div>
          <div>Downvotes: {response.data.children[0].data.downs}</div>
          <div>Comments: {response.data.children[0].data.num_comments}</div>
+
+         <h2>Post expanded</h2>
         </>
     )
 }
