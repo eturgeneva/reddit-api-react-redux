@@ -7,7 +7,7 @@ export default function Article () {
 
     useEffect(() => {
         // fetch('https://www.reddit.com/r/TurtleFacts/.json')
-        fetch('/data/TurtleFacts.json')
+        fetch('/mocks/TurtleFacts.json')
         .then(response => {
             if (response.ok) {
                 return response.json();
