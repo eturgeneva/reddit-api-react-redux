@@ -8,7 +8,12 @@ export class Reddit {
 
     async fetchPostsPreviews(subredditName, filter = '') {
         // Enable later:
-        await fetch(`${this.apiRoot}/${subredditName}/${filter}.json`)
+        const fetchLink = `${this.apiRoot}/${subredditName}${filter}.json`;
+        console.log('fetchLink in reddit.js', fetchLink);
+        await fetch(fetchLink)
+
+        // await fetch(`${this.apiRoot}/${subredditName}/${filter}.json`)
+
         // await fetch(`${this.apiRoot}/${subredditName}.json`)
         .then(response => {
             if (response.ok) {

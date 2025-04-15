@@ -2,23 +2,34 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import Article from '../components/Article';
 
-export default function ArticlePreviews() {
+export default function ArticlePreviews(props) {
     const [articlePreview, setArticlePreview] = useState(null);
+    console.log('ArticlePreviews props', props);
 
     useEffect(() => {
         // Add best to sort by best
         // fetch('https://www.reddit.com/r/TurtleFacts/.json')
         
-        fetch('/mocks/TurtleFacts.json')
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-        })
+        // fetch('/mocks/TurtleFacts.json')
+        // .then(response => {
+        //     if (response.ok) {
+        //         return response.json();
+        //     }
+        // })
+        props.redditClient.fetchPostsPreviews('TurtleFacts')
         .then(responseObj => {
+            console.log('responseObj in ArticlePreviews', responseObj);
             setArticlePreview(responseObj);
         })
     }, []);
+    function fetchPosts() {
+        props.redditClient.fetchPostsPreviews('TurtleFacts')
+        .then(responseObj => {
+            console.log('responseObj in ArticlePreviews', responseObj);
+            setArticlePreview(responseObj);
+        })
+    }
+    useEffect(fetchPosts, []);
 
     console.log('turtleFacts article previews', articlePreview);
     if (!articlePreview) {
