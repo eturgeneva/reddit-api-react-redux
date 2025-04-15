@@ -8,6 +8,7 @@ export default function ArticlePreviews() {
     useEffect(() => {
         // Add best to sort by best
         // fetch('https://www.reddit.com/r/TurtleFacts/.json')
+        
         fetch('/mocks/TurtleFacts.json')
         .then(response => {
             if (response.ok) {
