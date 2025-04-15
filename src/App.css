@@ -14,8 +14,11 @@
 } */
 
 .App-header {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* display: flex; */
   /* flex-direction: column; */
+  width: 100%;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -25,7 +28,7 @@
   color: rgb(112, 76, 182);
 }
 
-@keyframes App-logo-float {
+/* @keyframes App-logo-float {
   0% {
     transform: translateY(0);
   }
@@ -35,4 +38,12 @@
   100% {
     transform: translateY(0px);
   }
+} */
+ main {
+  display: flex;
+  width: 100%;
+ }
+
+.timeline {
+  width: 80%;
 }
