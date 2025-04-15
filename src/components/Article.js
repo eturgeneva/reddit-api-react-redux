@@ -19,4 +19,26 @@ export default function Article () {
     }, [])
 
     console.log('turtleFacts json', response);
+    if (!response) {
+        return (
+            <div>No data fetched</div>
+        )
+    }
+
+    return (
+        <>
+         <div>User: {response.data.children[0].data.author}</div>
+         <div>Link to the post: {response.data.children[0].data.permalink}</div>
+         {/* <div>Preview: {response.data.children[0].data.preview.images[0].source.url}</div> */}
+         {/* <img src={response.data.children[0].data.preview.images[0].source.url}/> */}
+         <div>Subreddit: {response.data.children[0].data.subreddit}</div>
+         <div>Thumbnail: {response.data.children[0].data.thumbnail}</div>
+         <img className="postThumbnail" src={response.data.children[0].data.thumbnail}/>
+         <div>Title: {response.data.children[0].data.title}</div>
+         <img className="postImage" src={response.data.children[0].data.url}/>
+         <div>Upvotes: {response.data.children[0].data.ups}</div>
+         <div>Downvotes: {response.data.children[0].data.downs}</div>
+         <div>Comments: {response.data.children[0].data.num_comments}</div>
+        </>
+    )
 }
