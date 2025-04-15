@@ -47,3 +47,7 @@
 .timeline {
   width: 80%;
 }
+
+.articleImage {
+  max-width: 15rem;
+}

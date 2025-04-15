@@ -44,7 +44,18 @@ export default function ArticlePreviews(props) {
                 <ul>
                     {articlePreviews && articlePreviews.data.children.map((article, index) => {
                         return (
-                            <li key={index}>{article.data.author}</li>
+                            // <li key={index}>{article.data.author}</li>
+                            <div className="article" key={index}>
+                                <div>{article.data.author}</div>
+                                <div>{article.data.permalink}</div>
+                                <div>{article.data.subreddit}</div>
+                                <div>Thumbnail: {article.data.thumbnail}</div>
+                                <img className="articleThumbnail" src={article.data.thumbnail}></img>
+                                {/* <img className="articleImage" src={article.data.url}></img> */}
+                                <div>Upvotes: {article.data.ups}</div>
+                                <div>Downvotes: {article.data.downs}</div>
+                                <div>Commets: {article.data.num_comments}</div>
+                            </div>
                         )
                     })}
                 </ul>
