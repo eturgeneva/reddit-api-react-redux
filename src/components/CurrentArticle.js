@@ -15,23 +15,9 @@ export default function CurrentArticle(props) {
             setArticleComments(responseObj[1].data.children);
         })
     }, [])
-    // Test index 03, remove later:
-    // const [article03Content, setArticle03Content] = useState(null);
-    // useEffect(() => {
-    //     fetch('/mocks/TurtleFacts_best_03.json')
-    //         .then(response => {
-    //             if (response.ok) {
-    //                 return response.json();
-    //             }
-    //         })
-    //         .then(responseObj => {
-    //             setArticle03Content(responseObj);
-    //         })
-    // }, [])
 
     console.log('turtleFacts article content', articleContent);
     console.log('current article comments', articleComments);
-    // console.log('turtleFacts article 03 content', article03Content);
 
     if (!articleContent) {
         return (
@@ -46,22 +32,11 @@ export default function CurrentArticle(props) {
 
     return (
         <>
-        <h3>Current article rendering with DataRender component:</h3>
-        <DataRender dataToRender={articleContent}/>
+            <h3>Current article rendering with DataRender component:</h3>
+            <DataRender dataToRender={articleContent}/>
 
-        <h2>Current article comments rendering:</h2>
-        <CommentRender dataToRender={articleComments} />
-
-        {/* <div>
-            <h2>Comments</h2>
-            <div>Author: {article03Content[1].data.children[0].data.author}</div>
-            <div>Comment: {article03Content[1].data.children[0].data.body}</div>
-            <div>Replies to the comment: {article03Content[1].data.children[0].data.replies.data.children[0].data.body}</div>
-
-            <div>Author: {article03Content[1].data.children[1].data.author}</div>
-            <div>Comment: {article03Content[1].data.children[1].data.body}</div>
-        </div> */}
-
+            <h2>Current article comments rendering:</h2>
+            <CommentRender dataToRender={articleComments} />
         </>
     )
 }
