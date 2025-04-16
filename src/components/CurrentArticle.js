@@ -2,21 +2,14 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 // import turtleFacts from '../data/turtleFacts.json';
 
-export default function Article() {
+export default function CurrentArticle(props) {
     const [articleContent, setArticleContent] = useState(null);
 
     useEffect(() => {
-        // Add best to sort by best
-        // fetch('https://www.reddit.com/r/TurtleFacts/.json')
-        fetch('/mocks/TurtleFacts_best_01.json')
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                }
-            })
-            .then(responseObj => {
-                setArticleContent(responseObj);
-            })
+        props.redditClient.fetchSelectedArticle('TurtleFacts_best_01')
+        .then(responseObj => {
+            setArticleContent(responseObj);
+        })
     }, [])
     // Test index 03, remove later:
     const [article03Content, setArticle03Content] = useState(null);
@@ -43,6 +36,7 @@ export default function Article() {
 
     return (
         <>
+        <h2>Test</h2>
             <h2>Post expanded (stateArray[0].sameAsArticlePreview!)</h2>
    
             <div>User: {articleContent[0].data.children[0].data.author}</div>

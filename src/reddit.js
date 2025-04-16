@@ -22,7 +22,15 @@ export class Reddit {
     }
 
     // Fetch selected article:
-    async fetchSelectedArticle(subredditName, permalink) {
+    async fetchSelectedArticle(permalink) {
 
+        const fetchLink = `${this.apiRoot}/${permalink}.json`;
+        console.log('fetchLink for current article', fetchLink);
+        return fetch(fetchLink)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
     }
 }

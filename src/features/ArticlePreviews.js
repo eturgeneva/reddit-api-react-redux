@@ -1,7 +1,8 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import Article from '../components/Article';
+import Article from '../components/CurrentArticle';
 import DataRender from '../components/DataRender';
+import CurrentArticle from '../components/CurrentArticle';
 
 export default function ArticlePreviews(props) {
     const [articlePreviews, setArticlePreviews] = useState(null);
@@ -28,7 +29,7 @@ export default function ArticlePreviews(props) {
     return (
         <div>
             <DataRender dataToRender={articlePreviews}/>
-            <Article />
+            <CurrentArticle redditClient={props.redditClient} />
         </div>
     )
 }
