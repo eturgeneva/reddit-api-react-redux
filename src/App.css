@@ -51,3 +51,7 @@
 .articleImage {
   max-width: 15rem;
 }
+
+.comment {
+  padding: 1rem;
+}
