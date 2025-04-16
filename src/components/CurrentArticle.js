@@ -8,7 +8,8 @@ export default function CurrentArticle(props) {
     const [articleComments, setArticleComments] = useState(null);
 
     useEffect(() => {
-        props.redditClient.fetchSelectedArticle('TurtleFacts_best_01')
+        // props.redditClient.fetchSelectedArticle('TurtleFacts_best_01')
+        props.redditClient.fetchSelectedArticle('TurtleFacts_best_03')
         .then(responseObj => {
             setArticleContent(responseObj[0].data.children);
             setArticleComments(responseObj[1].data.children);
