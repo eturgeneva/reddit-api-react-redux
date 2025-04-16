@@ -8,8 +8,8 @@ export default function ArticlePreviews(props) {
     console.log('ArticlePreviews props', props);
 
     useEffect(() => {
-        // props.redditClient.fetchPostsPreviews('TurtleFacts')
-        props.redditClient.fetchPostsPreviews('popular')
+        props.redditClient.fetchArticlePreviews('TurtleFacts')
+        // props.redditClient.fetchArticlePreviews('popular')
         .then(responseObj => {
             console.log('responseObj in ArticlePreviews', responseObj);
             // setArticlePreviews(responseObj);

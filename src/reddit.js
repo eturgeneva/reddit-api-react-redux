@@ -5,9 +5,9 @@ export class Reddit {
         // this.apiRoot = "https://www.reddit.com/r";
         this.apiRoot = "/mocks";
     }
+    // Fetch article previews:
+    async fetchArticlePreviews(subredditName, filter = '') {
 
-    async fetchPostsPreviews(subredditName, filter = '') {
-        // Enable later:
         const fetchLink = `${this.apiRoot}/${subredditName}${filter}.json`;
         console.log('fetchLink in reddit.js', fetchLink);
         return fetch(fetchLink)
@@ -19,5 +19,10 @@ export class Reddit {
                 return response.json();
             }
         })
+    }
+
+    // Fetch selected article:
+    async fetchSelectedArticle(subredditName, permalink) {
+
     }
 }

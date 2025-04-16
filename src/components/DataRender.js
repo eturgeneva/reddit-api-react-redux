@@ -10,7 +10,7 @@ export default function DataRender(props) {
                 return (
                     <div className="article" key={index}>
                         <div>{dataPiece.data.author}</div>
-                        <div>{dataPiece.data.permalink}</div>
+                        <div>Permalink: {dataPiece.data.permalink}</div>
                         <div>{dataPiece.data.subreddit}</div>
                         <div>Thumbnail: {dataPiece.data.thumbnail}</div>
                         <img className="articleThumbnail" src={dataPiece.data.thumbnail}></img>
