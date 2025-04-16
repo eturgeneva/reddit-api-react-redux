@@ -12,7 +12,7 @@ export default function CommentRender(props) {
                         <div>Author: {dataPiece.data.author}</div>
                         <div>Comment: {dataPiece.data.body}</div>
                         {dataPiece.data.replies && dataPiece.data.replies.data.children && 
-                                <CommentRender dataToRender={dataPiece.data.replies.data.children}/>
+                            <CommentRender dataToRender={dataPiece.data.replies.data.children}/>
                         }
                     </div>
                 )

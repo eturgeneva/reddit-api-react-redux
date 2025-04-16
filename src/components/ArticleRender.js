@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function DataRender(props) {
+export default function ArticleRender(props) {
     const dataToRender = props.dataToRender;
     console.log('dataToRender', dataToRender);
 

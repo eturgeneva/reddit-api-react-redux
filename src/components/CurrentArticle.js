@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import DataRender from './DataRender';
+import ArticleRender from './ArticleRender';
 import CommentRender from './CommentRender';
 
 export default function CurrentArticle(props) {
@@ -33,7 +33,7 @@ export default function CurrentArticle(props) {
     return (
         <>
             <h3>Current article rendering with DataRender component:</h3>
-            <DataRender dataToRender={articleContent}/>
+            <ArticleRender dataToRender={articleContent}/>
 
             <h2>Current article comments rendering:</h2>
             <CommentRender dataToRender={articleComments} />
