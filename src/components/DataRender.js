@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ContentsRender(props) {
+export default function DataRender(props) {
     const dataToRender = props.dataToRender;
     console.log('dataToRender', dataToRender);
 

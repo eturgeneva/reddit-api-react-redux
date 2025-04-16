@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import Article from '../components/Article';
-import ContentsRender from '../components/DataRender';
+import DataRender from '../components/DataRender';
 
 export default function ArticlePreviews(props) {
     const [articlePreviews, setArticlePreviews] = useState(null);
@@ -26,7 +26,7 @@ export default function ArticlePreviews(props) {
 
     return (
         <div>
-            <ContentsRender dataToRender={articlePreviews}/>
+            <DataRender dataToRender={articlePreviews}/>
             <Article />
         </div>
     )
