@@ -12,7 +12,7 @@ function App(props) {
       <Header />
       <main>
         <Timeline redditClient={props.redditClient}/>
-        <Subreddits />
+        <Subreddits redditClient={props.redditClient}/>
       </main>
     </>
   );
