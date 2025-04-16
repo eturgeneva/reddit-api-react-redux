@@ -7,31 +7,15 @@ export default function ArticlePreviews(props) {
     console.log('ArticlePreviews props', props);
 
     useEffect(() => {
-        // Add best to sort by best
-        // fetch('https://www.reddit.com/r/TurtleFacts/.json')
-        
-        // fetch('/mocks/TurtleFacts.json')
-        // .then(response => {
-        //     if (response.ok) {
-        //         return response.json();
-        //     }
-        // })
         props.redditClient.fetchPostsPreviews('TurtleFacts')
         .then(responseObj => {
             console.log('responseObj in ArticlePreviews', responseObj);
             setArticlePreviews(responseObj);
         })
     }, []);
-    // function fetchPosts() {
-    //     props.redditClient.fetchPostsPreviews('TurtleFacts')
-    //     .then(responseObj => {
-    //         console.log('responseObj in ArticlePreviews', responseObj);
-    //         setArticlePreview(responseObj);
-    //     })
-    // }
-    // useEffect(fetchPosts, []);
 
     console.log('turtleFacts article previews', articlePreviews);
+
     if (!articlePreviews) {
         return (
             <div>No data fetched</div>
