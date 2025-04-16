@@ -28,7 +28,6 @@ export default function ArticlePreviews(props) {
                 <ul>
                     {articlePreviews && articlePreviews.data.children.map((article, index) => {
                         return (
-                            // <li key={index}>{article.data.author}</li>
                             <div className="article" key={index}>
                                 <div>{article.data.author}</div>
                                 <div>{article.data.permalink}</div>
@@ -52,7 +51,6 @@ export default function ArticlePreviews(props) {
                     <div>Thumbnail: {articlePreviews.data.children[0].data.thumbnail}</div>
                     <img className="postThumbnail" src={articlePreviews.data.children[0].data.thumbnail}/>
                     <div>Title: {articlePreviews.data.children[0].data.title}</div>
-                    {/* <img className="postImage" src={articlePreview.data.children[0].data.url}/> */}
                     <div>Upvotes: {articlePreviews.data.children[0].data.ups}</div>
                     <div>Downvotes: {articlePreviews.data.children[0].data.downs}</div>
                     <div>Comments: {articlePreviews.data.children[0].data.num_comments}</div>
