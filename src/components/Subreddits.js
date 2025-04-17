@@ -15,7 +15,6 @@ export default function Subreddits(props) {
             {subreddits.length > 0 && subreddits.map((subreddit, index) => {
                 console.log(subreddit);
                 return (
-                    // <div className="subreddit" onClick={handleClick}>{subreddit}</div>
                     <div className="subreddit" onClick={() => handleClick(subreddit)}>{subreddit}</div>
                 )
             })}
