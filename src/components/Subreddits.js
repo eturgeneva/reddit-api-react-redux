@@ -15,9 +15,7 @@ export default function Subreddits(props) {
             {subreddits.length > 0 && subreddits.map((subreddit, index) => {
                 console.log(subreddit);
                 return (
-                    // <Link to={subreddit}>
-                    <Link to={`${subreddit}`}>
-
+                    <Link to={subreddit}>
                         <li className="subreddit" 
                             key={index} 
                             onClick={() => handleClick(subreddit)}>{subreddit}</li>
