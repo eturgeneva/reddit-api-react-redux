@@ -13,10 +13,8 @@ export default function ArticleRender(props) {
         <>
             {dataToRender && dataToRender.map((dataPiece, index) => {
                 return (
-                    // <Link to={`${dataPiece.data.subreddit}/best_01`}>
-                    <Link to={`best_01`}>
-                        {/* <div className="article" key={index} onClick={() => handleClick(`${dataPiece.data.subreddit}/best_01`)}> */}
-                        <div className="article" key={index} onClick={() => handleClick(`${dataPiece.data.subreddit}/best_01`)}>
+                    <Link to={`article_01`}>
+                        <div className="article" key={index} onClick={() => handleClick(`${dataPiece.data.subreddit}/article_01`)}>
                             <div>{dataPiece.data.author}</div>
                             <div>Permalink: {dataPiece.data.permalink}</div>
                             <div>{dataPiece.data.subreddit}</div>
