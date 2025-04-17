@@ -12,7 +12,7 @@ export default function Homepage(props) {
             <Header />
             <main>
                 {/* <Timeline redditClient={props.redditClient}/> */}
-                <ArticlePreviews redditClient={props.redditClient}/>
+                {/* <ArticlePreviews redditClient={props.redditClient}/> */}
                 <Outlet />
                 <Subreddits redditClient={props.redditClient}/>
             </main>

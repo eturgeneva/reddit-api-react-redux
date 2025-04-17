@@ -19,7 +19,7 @@ export default function ArticlePreviews(props) {
             // setArticlePreviews(responseObj);
             setArticlePreviews(responseObj.data.children);
         })
-    }, []);
+    }, [subredditName]);
 
     console.log('turtleFacts article previews', articlePreviews);
 

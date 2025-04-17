@@ -16,7 +16,7 @@ export default function Subreddits(props) {
                 console.log(subreddit);
                 return (
                     // <Link to={subreddit}>
-                    <Link to={`http://localhost:3000/${subreddit}`}>
+                    <Link to={`${subreddit}`}>
 
                         <li className="subreddit" 
                             key={index} 
