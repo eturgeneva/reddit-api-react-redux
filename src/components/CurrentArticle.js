@@ -12,7 +12,8 @@ export default function CurrentArticle(props) {
 
     useEffect(() => {
         // props.redditClient.fetchSelectedArticle('TurtleFacts_best_01')
-        props.redditClient.fetchSelectedArticle('TurtleFacts_best_03')
+        // props.redditClient.fetchSelectedArticle('TurtleFacts_best_03')
+        props.redditClient.fetchSelectedArticle(`${subreddit}/${best}`)
         .then(responseObj => {
             setArticleContent(responseObj[0].data.children);
             setArticleComments(responseObj[1].data.children);
