@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 export default function Subreddits(props) {
     const [subreddits, setSubreddits] = useState(['TurtleFacts']);
 
-    function handleClick(subreddit) {
-        props.redditClient.fetchArticlePreviews(subreddit);
-    }
+    // function handleClick(subreddit) {
+    //     props.redditClient.fetchArticlePreviews(subreddit);
+    // }
 
     return (
         <div className="subreddits">
@@ -18,7 +18,7 @@ export default function Subreddits(props) {
                     <Link to={subreddit}>
                         <li className="subreddit" 
                             key={index} 
-                            onClick={() => handleClick(subreddit)}>{subreddit}</li>
+                            >{subreddit}</li>
                     </Link>
                     // <div className="subreddit" onClick={() => handleClick(subreddit)}>{subreddit}</div>
                 )
