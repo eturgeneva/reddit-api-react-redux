@@ -8,20 +8,21 @@ import CurrentArticle from '../components/CurrentArticle';
 export default function ArticlePreviews(props) {
     const [articlePreviews, setArticlePreviews] = useState(null);
     console.log('ArticlePreviews props', props);
-    // const subredditName = props.subreddit ? props.subreddit : 'popular';
-    const subredditName = props.subreddit;
-    console.log('useParams', useParams());
+
+    // const subredditName = props.subreddit;
+    // console.log('useParams', useParams());
+    const { subreddit } = useParams();
 
     useEffect(() => {
         // props.redditClient.fetchArticlePreviews('TurtleFacts')
         // props.redditClient.fetchArticlePreviews('popular')
-        props.redditClient.fetchArticlePreviews(subredditName)
+        props.redditClient.fetchArticlePreviews(subreddit)
         .then(responseObj => {
             console.log('responseObj in ArticlePreviews', responseObj);
             // setArticlePreviews(responseObj);
             setArticlePreviews(responseObj.data.children);
         })
-    }, [subredditName]);
+    }, [subreddit]);
 
     console.log('turtleFacts article previews', articlePreviews);
 
