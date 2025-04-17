@@ -1,20 +1,38 @@
 import React from 'react';
+import { Route, createBrowserRouter, RouterProvider, createRoutesFromElements } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header.js';
 import Timeline from './components/Timeline.js';
 import Subreddits from './components/Subreddits.js';
 
-function App(props) {
+// Routing:
+import Homepage from './components/Homepage.js';
+import { Reddit } from './reddit.js';
+
+const redditClient = new Reddit();
+
+const router = createBrowserRouter(createRoutesFromElements(
+  <Route path="/" element={ <Homepage redditClient={redditClient}/> }>
+
+  </Route>
+)
+
+);
+
+function App() {
   // const redditClient = props.redditClient;
   
   return (
-    <>
-      <Header />
-      <main>
-        <Timeline redditClient={props.redditClient}/>
-        <Subreddits redditClient={props.redditClient}/>
-      </main>
-    </>
+    <RouterProvider router={router}/>
+
+    // Previous
+    // <>
+    //   <Header />
+    //   <main>
+    //     <Timeline redditClient={props.redditClient}/>
+    //     <Subreddits redditClient={props.redditClient}/>
+    //   </main>
+    // </>
   );
 }
 
