@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Subreddits(props) {
     const [subreddits, setSubreddits] = useState(['TurtleFacts']);
 
     function handleClick(subreddit) {
-        // props.redditClient.fetchArticlePreviews(e.target.innerText);
         props.redditClient.fetchArticlePreviews(subreddit);
     }
 
@@ -15,7 +15,14 @@ export default function Subreddits(props) {
             {subreddits.length > 0 && subreddits.map((subreddit, index) => {
                 console.log(subreddit);
                 return (
-                    <div className="subreddit" onClick={() => handleClick(subreddit)}>{subreddit}</div>
+                    // <Link to={subreddit}>
+                    <Link to={`http://localhost:3000/${subreddit}`}>
+
+                        <li className="subreddit" 
+                            key={index} 
+                            onClick={() => handleClick(subreddit)}>{subreddit}</li>
+                    </Link>
+                    // <div className="subreddit" onClick={() => handleClick(subreddit)}>{subreddit}</div>
                 )
             })}
         </div>

@@ -3,6 +3,7 @@ import React from "react";
 import Header from "./Header";
 import Timeline from "./Timeline";
 import Subreddits from "./Subreddits";
+import { Outlet } from "react-router-dom";
 
 export default function Homepage(props) {
     return (
@@ -10,6 +11,7 @@ export default function Homepage(props) {
             <Header />
             <main>
                 <Timeline redditClient={props.redditClient}/>
+                <Outlet />
                 <Subreddits redditClient={props.redditClient}/>
             </main>
         </>

@@ -8,12 +8,13 @@ import Subreddits from './components/Subreddits.js';
 // Routing:
 import Homepage from './components/Homepage.js';
 import { Reddit } from './reddit.js';
+import ArticlePreviews from './features/ArticlePreviews.js';
 
 const redditClient = new Reddit();
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={ <Homepage redditClient={redditClient}/> }>
-
+    <Route path="/TurtleFacts" element={ <ArticlePreviews redditClient={redditClient}/> }/>
   </Route>
 )
 
