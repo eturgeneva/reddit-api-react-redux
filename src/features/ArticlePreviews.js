@@ -34,7 +34,7 @@ export default function ArticlePreviews(props) {
     }
 
     return (
-        <div>
+        <div className="articlePreviews">
             <ArticlePreviewRender dataToRender={articlePreviews} redditClient={props.redditClient}/>
             {/* <CurrentArticle redditClient={props.redditClient} /> */}
         </div>

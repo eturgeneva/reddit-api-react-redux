@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 .App {
   text-align: center;
 }
@@ -44,8 +50,16 @@
   width: 100%;
  }
 
-.timeline {
+/* .timeline {
   width: 80%;
+} */
+
+.articlePreviews, .selectedArticle {
+  width: 80%;
+}
+
+.subreddits {
+  width: 20%;
 }
 
 .articleImage {

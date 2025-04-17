@@ -5,7 +5,7 @@ export default function CommentRender(props) {
     console.log('comments to render', dataToRender);
 
     return (
-        <>
+        <div className="articleComments">
             {dataToRender && dataToRender.map((dataPiece, index) => {
                 return (
                     <div className="comment" key={index}>
@@ -17,6 +17,6 @@ export default function CommentRender(props) {
                     </div>
                 )
             })}
-        </>
+        </div>
     )
 }

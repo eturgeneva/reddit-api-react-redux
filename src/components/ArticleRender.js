@@ -10,7 +10,7 @@ export default function ArticleRender(props) {
         <>
             {dataToRender && dataToRender.map((dataPiece, index) => {
                 return (
-                        <div key={index}>
+                        <div className="articleBody" key={index}>
                             <div>{dataPiece.data.author}</div>
                             <div>Permalink: {dataPiece.data.permalink}</div>
                             <div>{dataPiece.data.subreddit}</div>
