@@ -14,6 +14,7 @@ const redditClient = new Reddit();
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={ <Homepage redditClient={redditClient}/> }>
+    {/* <Route path="timeline" element ={<Timeline redditClient={redditClient}/>} /> */}
     <Route path="/TurtleFacts" element={ <ArticlePreviews redditClient={redditClient}/> }/>
   </Route>
 )
