@@ -7,7 +7,8 @@ import CurrentArticle from '../components/CurrentArticle';
 export default function ArticlePreviews(props) {
     const [articlePreviews, setArticlePreviews] = useState(null);
     console.log('ArticlePreviews props', props);
-    const subredditName = props.subreddit ? props.subreddit : 'popular';
+    // const subredditName = props.subreddit ? props.subreddit : 'popular';
+    const subredditName = props.subreddit;
 
     useEffect(() => {
         // props.redditClient.fetchArticlePreviews('TurtleFacts')

@@ -6,8 +6,8 @@ export class Reddit {
         this.apiRoot = "/mocks";
     }
     // Fetch article previews:
-    // async fetchArticlePreviews(subredditName = 'popular', filter = '') {
-    async fetchArticlePreviews(subredditName, filter = '') {
+    async fetchArticlePreviews(subredditName = 'popular', filter = '') {
+    // async fetchArticlePreviews(subredditName, filter = '') {
 
         const fetchLink = `${this.apiRoot}/${subredditName}${filter}.json`;
         console.log('fetchLink in reddit.js', fetchLink);
