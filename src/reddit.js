@@ -2,8 +2,8 @@ export class Reddit {
     constructor() {
         this.name = "Reddit API";
         // Enable later:
-        this.apiRoot = "https://www.reddit.com/r";
-        // this.apiRoot = "/mocks";
+        // this.apiRoot = "https://www.reddit.com/r";
+        this.apiRoot = "/mocks";
     }
     // Fetch article previews:
     async fetchArticlePreviews(subredditName = 'popular', filter = '') {
