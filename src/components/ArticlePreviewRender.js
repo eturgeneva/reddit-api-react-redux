@@ -6,16 +6,16 @@ export default function ArticlePreviewRender(props) {
     const dataToRender = props.dataToRender;
     console.log('dataToRender', dataToRender);
 
-    function handleClick(article) {
-        props.redditClient.fetchSelectedArticle(article);
+    function handleClick(articleUrl) {
+        props.redditClient.fetchSelectedArticle(articleUrl);
     }
 
     return (
         <>
             {dataToRender && dataToRender.map((dataPiece, index) => {
                 return (
-                    <Link to={`article_01`}>
-                        <div className="article" key={index} onClick={() => handleClick(`${dataPiece.data.subreddit}/article_01`)}>
+                    <Link to={`article_${index}`}>
+                        <div className="article" key={index} onClick={() => handleClick(`${dataPiece.data.subreddit}/article_${index}`)}>
                             <div>{dataPiece.data.author}</div>
                             <div>Permalink: {dataPiece.data.permalink}</div>
                             <div>{dataPiece.data.subreddit}</div>
