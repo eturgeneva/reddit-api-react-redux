@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import ArticleRender from './ArticleRender';
+import ArticleRender from './ArticlePreviewRender';
 import CommentRender from './CommentRender';
 
 export default function CurrentArticle(props) {
