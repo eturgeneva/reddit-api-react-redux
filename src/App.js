@@ -12,8 +12,8 @@ const redditClient = new Reddit();
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={ <Homepage redditClient={redditClient}/> }>
-    <Route path="/:subreddit?" element={ <ArticlePreviews redditClient={redditClient} /> }/>
-    <Route path="/:best" element={ <CurrentArticle redditClient={redditClient} />}/>
+    <Route path="/:subreddit?" element={ <ArticlePreviews redditClient={redditClient} /> } />
+    <Route path="/:subreddit/:best" element={ <CurrentArticle redditClient={redditClient} />}/>
   </Route>
 ));
 
