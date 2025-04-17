@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Article from '../components/CurrentArticle';
 import ArticleRender from '../components/ArticleRender';
 import CurrentArticle from '../components/CurrentArticle';
@@ -9,6 +10,7 @@ export default function ArticlePreviews(props) {
     console.log('ArticlePreviews props', props);
     // const subredditName = props.subreddit ? props.subreddit : 'popular';
     const subredditName = props.subreddit;
+    console.log('useParams', useParams());
 
     useEffect(() => {
         // props.redditClient.fetchArticlePreviews('TurtleFacts')
