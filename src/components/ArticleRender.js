@@ -4,11 +4,15 @@ export default function ArticleRender(props) {
     const dataToRender = props.dataToRender;
     console.log('dataToRender', dataToRender);
 
+    function handleClick(article) {
+        props.redditClient.fetchSelectedArticle(article);
+    }
+
     return (
         <>
             {dataToRender && dataToRender.map((dataPiece, index) => {
                 return (
-                    <div className="article" key={index}>
+                    <div className="article" key={index} onClick={() => handleClick(`${dataPiece.data.subreddit}_best_01`)}>
                         <div>{dataPiece.data.author}</div>
                         <div>Permalink: {dataPiece.data.permalink}</div>
                         <div>{dataPiece.data.subreddit}</div>
