@@ -2,7 +2,7 @@ import React from "react";
 
 import Header from "./Header";
 import Subreddits from "./Subreddits";
-import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router";
 
 export default function Homepage(props) {
     return (

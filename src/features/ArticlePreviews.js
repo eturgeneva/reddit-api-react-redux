@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 import Article from '../components/CurrentArticle';
 import ArticleRender from '../components/ArticleRender';
 import CurrentArticle from '../components/CurrentArticle';
