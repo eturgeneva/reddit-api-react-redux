@@ -36,12 +36,12 @@ export default function CurrentArticle(props) {
     }
 
     return (
-        <>
+        <div className="selectedArticle">
             <h3>Current article rendering with DataRender component:</h3>
             <ArticleRender dataToRender={articleContent} />
 
             <h2>Current article comments rendering:</h2>
             <CommentRender dataToRender={articleComments} />
-        </>
+        </div>
     )
 }

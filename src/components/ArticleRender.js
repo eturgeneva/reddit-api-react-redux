@@ -6,17 +6,11 @@ export default function ArticleRender(props) {
     const dataToRender = props.dataToRender;
     console.log('dataToRender', dataToRender);
 
-    // function handleClick(article) {
-    //     props.redditClient.fetchSelectedArticle(article);
-    // }
-
     return (
         <>
             {dataToRender && dataToRender.map((dataPiece, index) => {
                 return (
-                    // <Link to={`article_01`}>
-                        // <div className="article" key={index} onClick={() => handleClick(`${dataPiece.data.subreddit}/article_01`)}>
-                        <div className="article" key={index}>
+                        <div key={index}>
                             <div>{dataPiece.data.author}</div>
                             <div>Permalink: {dataPiece.data.permalink}</div>
                             <div>{dataPiece.data.subreddit}</div>
@@ -27,7 +21,6 @@ export default function ArticleRender(props) {
                             <div>Downvotes: {dataPiece.data.downs}</div>
                             <div>Comments: {dataPiece.data.num_comments}</div>
                         </div>
-                    // </Link>
                 )
             })}
         </>
