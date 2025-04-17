@@ -14,7 +14,7 @@ export default function ArticlePreviewRender(props) {
         <>
             {dataToRender && dataToRender.map((dataPiece, index) => {
                 return (
-                    <Link to={`article_${index}`}>
+                    <Link to={`${dataPiece.data.id}`}>
                         <div className="article" key={index} >
                             <div>{dataPiece.data.author}</div>
                             <div>Permalink: {dataPiece.data.permalink}</div>

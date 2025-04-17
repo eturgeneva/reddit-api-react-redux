@@ -9,17 +9,17 @@ export default function CurrentArticle(props) {
     const [articleContent, setArticleContent] = useState(null);
     const [articleComments, setArticleComments] = useState(null);
     // console.log('useParams in CurrentArticle', useParams());
-    const { subreddit, article } = useParams();
+    const { subreddit, articleId } = useParams();
 
     useEffect(() => {
         // props.redditClient.fetchSelectedArticle('TurtleFacts_best_01')
         // props.redditClient.fetchSelectedArticle('TurtleFacts_best_03')
-        props.redditClient.fetchSelectedArticle(`${subreddit}/${article}`)
+        props.redditClient.fetchSelectedArticle(`${subreddit}/${articleId}`)
         .then(responseObj => {
             setArticleContent(responseObj[0].data.children);
             setArticleComments(responseObj[1].data.children);
         })
-    }, [subreddit, article]);
+    }, [subreddit, articleId]);
 
     console.log('turtleFacts article content', articleContent);
     console.log('current article comments', articleComments);
