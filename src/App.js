@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, createBrowserRouter, RouterProvider, createRoutesFromElements } from 'react-router';
+import { Route, createBrowserRouter, RouterProvider, createRoutesFromElements, Switch, Redirect } from 'react-router';
 import './App.css';
 
 // Routing:
@@ -13,7 +13,7 @@ const redditClient = new Reddit();
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={ <Homepage redditClient={redditClient}/> }>
     <Route path="/:subreddit?" element={ <ArticlePreviews redditClient={redditClient} /> }/>
-    <Route path="/:best" element={ <CurrentArticle redditClient={redditClient} />}/>
+    <Route path=":" element={ <CurrentArticle redditClient={redditClient} />}/>
   </Route>
 ));
 
