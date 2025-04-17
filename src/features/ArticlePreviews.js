@@ -2,7 +2,8 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Article from '../components/CurrentArticle';
-import ArticleRender from '../components/ArticlePreviewRender';
+// import ArticleRender from '../components/ArticlePreviewRender';
+import ArticlePreviewRender from '../components/ArticlePreviewRender';
 import CurrentArticle from '../components/CurrentArticle';
 
 export default function ArticlePreviews(props) {
@@ -34,7 +35,7 @@ export default function ArticlePreviews(props) {
 
     return (
         <div>
-            <ArticleRender dataToRender={articlePreviews} redditClient={props.redditClient}/>
+            <ArticlePreviewRender dataToRender={articlePreviews} redditClient={props.redditClient}/>
             <CurrentArticle redditClient={props.redditClient} />
         </div>
     )
