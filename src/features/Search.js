@@ -8,7 +8,15 @@ export default function Search () {
     const navigate = useNavigate();
     console.log('navigate', navigate);
 
-    function submitHandler() {
+    function submitHandler(e) {
+        e.preventDefault();
+        
+        const query = {
+            title: searchInput
+        };
+
+        const queryString = createSearchParams(query);
+        console.log('queryString', queryString);
 
     }
 
@@ -19,5 +27,12 @@ export default function Search () {
                 🔍
             </button>
         </form>
+
+        // <div className="searchForm">
+        //     <input onChange={e => setSearchInput(e.target.value)} className="search" type="text" placeholder="Search"/>
+        //     <button onClick={submitHandler} className="searchButton">
+        //         🔍
+        //     </button>
+        // </div>
     )
 }
