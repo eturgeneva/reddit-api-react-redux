@@ -19,7 +19,7 @@ export default function Search () {
         console.log('queryString', queryString);
 
         navigate({
-            pathname: '/TurtleFacts/search',
+            pathname: '/TurtleFacts/search/',
             search: `${queryString}`
         })
 
