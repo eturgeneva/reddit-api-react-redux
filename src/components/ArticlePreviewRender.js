@@ -17,6 +17,9 @@ export default function ArticlePreviewRender(props) {
                     // <Link to={`${dataPiece.data.id}`}>
                         <div className="article" key={index} >
                             <div>Subreddit: {dataPiece.data.subreddit}</div>
+
+                            <button>💗 Follow {dataPiece.data.subreddit}</button>
+
                             <div>Title: {dataPiece.data.title}</div>
                             <div>{dataPiece.data.author}</div>
                             <div>Permalink: {dataPiece.data.permalink}</div>
@@ -29,7 +32,7 @@ export default function ArticlePreviewRender(props) {
                             <div>Upvotes: {dataPiece.data.ups}</div>
                             <div>Downvotes: {dataPiece.data.downs}</div>
                             <div>Comments: {dataPiece.data.num_comments}</div>
-                            
+
                             <Link to={`${dataPiece.data.id}`}>
                                 <button>Read more</button>
                             </Link>
