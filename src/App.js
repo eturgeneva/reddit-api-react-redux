@@ -7,6 +7,7 @@ import Homepage from './components/Homepage.js';
 import { Reddit } from './reddit.js';
 import ArticlePreviews from './features/ArticlePreviews.js';
 import CurrentArticle from './components/CurrentArticle.js';
+import SearchResultsDisplay from './components/SearchResultsDisplay.js';
 
 const redditClient = new Reddit();
 
@@ -14,6 +15,7 @@ const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={ <Homepage redditClient={redditClient}/> }>
     <Route path="/:subreddit?" element={ <ArticlePreviews redditClient={redditClient} /> } />
     <Route path="/:subreddit/:articleId" element={ <CurrentArticle redditClient={redditClient} />}/>
+    <Route path="/:subreddit/search/:query" element={ <SearchResultsDisplay redditClient={redditClient} />}/>
   </Route>
 ));
 
