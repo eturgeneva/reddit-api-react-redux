@@ -14,7 +14,7 @@ export default function ArticlePreviewRender(props) {
         <>
             {dataToRender && dataToRender.map((dataPiece, index) => {
                 return (
-                    <Link to={`${dataPiece.data.id}`}>
+                    // <Link to={`${dataPiece.data.id}`}>
                         <div className="article" key={index} >
                             <div>Subreddit: {dataPiece.data.subreddit}</div>
                             <div>Title: {dataPiece.data.title}</div>
@@ -29,8 +29,12 @@ export default function ArticlePreviewRender(props) {
                             <div>Upvotes: {dataPiece.data.ups}</div>
                             <div>Downvotes: {dataPiece.data.downs}</div>
                             <div>Comments: {dataPiece.data.num_comments}</div>
+                            
+                            <Link to={`${dataPiece.data.id}`}>
+                                <button>Read more</button>
+                            </Link>
                         </div>
-                    </Link>
+                    // </Link>
                 )
             })}
         </>
