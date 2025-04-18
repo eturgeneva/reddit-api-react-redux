@@ -16,6 +16,7 @@ export default function ArticlePreviewRender(props) {
                 return (
                     <Link to={`${dataPiece.data.id}`}>
                         <div className="article" key={index} >
+                            <div>Subreddit: {dataPiece.data.subreddit}</div>
                             <div>Title: {dataPiece.data.title}</div>
                             <div>{dataPiece.data.author}</div>
                             <div>Permalink: {dataPiece.data.permalink}</div>

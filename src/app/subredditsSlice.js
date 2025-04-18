@@ -13,7 +13,7 @@ const subredditsSlice = createSlice({
         },
 
         removeSubreddit(state, action) {
-            
+            state.subreddits.filter((subreddit) => subreddit !== action.payload);
         }
     }
 })
