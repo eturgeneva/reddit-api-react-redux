@@ -12,7 +12,7 @@ export default function Search () {
         e.preventDefault();
         
         const query = {
-            title: searchInput
+            q: searchInput
         };
 
         const queryString = createSearchParams(query);
