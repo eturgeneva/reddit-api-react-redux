@@ -36,8 +36,8 @@ export class Reddit {
     }
 
     // Search:
-    async search(subreddt, queryString) {
-        const searchUrl = `${this.apiRoot}/${subreddt}/search.json?q=${queryString}`;
+    async search(queryString) {
+        const searchUrl = `${this.apiRoot}/popular/search.json?q=${queryString}`;
         console.log('searchUrl', searchUrl);
         return fetch(searchUrl)
         .then(response => {

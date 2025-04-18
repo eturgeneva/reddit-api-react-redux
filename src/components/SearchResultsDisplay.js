@@ -12,13 +12,13 @@ export default function SearchResultsDisplay(props) {
     console.log('searchParams get', searchParams.get('q'));
 
     const searchQuery = searchParams.get('q');
-    const { subreddit } = useParams();
+    // const { subreddit } = useParams();
 
     useEffect(() => {
-        props.redditClient.search(subreddit, searchQuery)
+        props.redditClient.search(searchQuery)
         .then(responseObj => setSearchResults(responseObj.data.children));
 
-    }, [subreddit, searchQuery]);
+    }, [searchQuery]);
 
     if (!searchResults) {
         return (

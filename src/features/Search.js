@@ -20,7 +20,7 @@ export default function Search () {
         console.log('queryString', queryString);
 
         navigate({
-            pathname: `/${subreddit}/search/`,
+            pathname: `/search/`,
             search: `${queryString}`
         })
 
