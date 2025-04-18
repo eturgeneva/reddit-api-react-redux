@@ -13,28 +13,15 @@ export default function Subreddits(props) {
         <div className="subreddits">
             <h2>Subreddits</h2>
             {subreddits && subreddits.subreddits.map((subreddit, index) => {
-                console.log(subreddit);
                 return (
-                    <Link to={subreddit}>
-                        <li className="subreddit" 
-                            key={index} 
-                            >{subreddit}</li>
-                    </Link>
+                        <div className="subreddit" key={index}>
+                            <button>x</button>
+                            <Link to={subreddit}>
+                                {subreddit}
+                            </Link>
+                        </div>
                 )
             })}
         </div>
-        // <div className="subreddits">
-        //     <h2>Subreddits</h2>
-        //     {subreddits.length > 0 && subreddits.map((subreddit, index) => {
-        //         console.log(subreddit);
-        //         return (
-        //             <Link to={subreddit}>
-        //                 <li className="subreddit" 
-        //                     key={index} 
-        //                     >{subreddit}</li>
-        //             </Link>
-        //         )
-        //     })}
-        // </div>
     )
 }
