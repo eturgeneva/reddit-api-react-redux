@@ -6,9 +6,9 @@ export default function ArticlePreviewRender(props) {
     const dataToRender = props.dataToRender;
     console.log('dataToRender', dataToRender);
 
-    // function handleClick(articleUrl) {
-    //     props.redditClient.fetchSelectedArticle(articleUrl);
-    // }
+    function handleClick() {
+        
+    }
 
     return (
         <>
@@ -18,7 +18,7 @@ export default function ArticlePreviewRender(props) {
                         <div className="article" key={index} >
                             <div>Subreddit: {dataPiece.data.subreddit}</div>
 
-                            <button>💗 Follow {dataPiece.data.subreddit}</button>
+                            <button className="followButton">💗 Follow {dataPiece.data.subreddit}</button>
 
                             <div>Title: {dataPiece.data.title}</div>
                             <div>{dataPiece.data.author}</div>
@@ -34,7 +34,7 @@ export default function ArticlePreviewRender(props) {
                             <div>Comments: {dataPiece.data.num_comments}</div>
 
                             <Link to={`${dataPiece.data.id}`}>
-                                <button>Read more</button>
+                                <button className="readMoreButton">Read more</button>
                             </Link>
                         </div>
                     // </Link>
