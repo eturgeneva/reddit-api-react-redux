@@ -18,7 +18,8 @@ const subredditsSlice = createSlice({
         },
 
         removeSubreddit(state, action) {
-            state.subreddits.filter((subreddit) => subreddit !== action.payload);
+            state.subreddits = state.subreddits.filter((subreddit) => subreddit !== action.payload);
+            console.log(state, action);
         }
     }
 })
