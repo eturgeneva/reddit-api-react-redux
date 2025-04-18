@@ -1,12 +1,13 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { useNavigate, createSearchParams } from 'react-router-dom';
+import { useNavigate, createSearchParams, useParams } from 'react-router-dom';
 
 export default function Search () {
 
     const [searchInput, setSearchInput] = useState('');
     const navigate = useNavigate();
     console.log('navigate', navigate);
+    const { subreddit } = useParams();
 
     function submitHandler(e) {
         e.preventDefault();
@@ -19,7 +20,7 @@ export default function Search () {
         console.log('queryString', queryString);
 
         navigate({
-            pathname: '/TurtleFacts/search/',
+            pathname: `/${subreddit}/search/`,
             search: `${queryString}`
         })
 
