@@ -11,10 +11,15 @@ export default function ArticlePreviewRender(props) {
     const subreddits = useSelector(selectedSubreddits);
     console.log('subreddits list', subreddits);
 
-    function handleClick(subreddit) {
+    function follow(subreddit) {
         dispatch(addSubreddit(subreddit));
         console.log('subreddits list', subreddits);
     }
+
+    function unfollow(subreddit) {
+        dispatch(removeSubreddit(subreddit));
+    }
+
 
     return (
         <>
@@ -24,7 +29,11 @@ export default function ArticlePreviewRender(props) {
                         <div className="article" key={index} >
                             <div>Subreddit: {dataPiece.data.subreddit}</div>
 
-                            <button onClick={() => handleClick(dataPiece.data.subreddit)} className="followButton">💗 Follow {dataPiece.data.subreddit}</button>
+                            {subreddits.subreddits.includes(dataPiece.data.subreddit) ?
+                                <button onClick={() => unfollow(dataPiece.data.subreddit)} className="followButton">💔 Unfollow {dataPiece.data.subreddit}</button>
+                                :
+                                <button onClick={() => follow(dataPiece.data.subreddit)} className="followButton">💗 Follow {dataPiece.data.subreddit}</button>
+                            }
 
                             <div>Title: {dataPiece.data.title}</div>
                             <div>{dataPiece.data.author}</div>
