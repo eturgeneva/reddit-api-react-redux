@@ -1,8 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-    subreddits: ['TurtleFacts']
-}
+// const initialState = {
+//     subreddits: ['TurtleFacts']
+// }
+
+// const initialState = localStorage.getItem('state') ?? { subreddits: ['TurtleFacts']}
+
+const localState = localStorage.getItem('state');
+const initialState = localState ? JSON.parse(localState) : { subreddits: ['TurtleFacts']};
 
 const subredditsSlice = createSlice({
     name: 'subreddits',

@@ -6,3 +6,9 @@ export const store = configureStore({
     subreddits: subredditsSliceReducer
   },
 });
+
+// Updates if somethings changes in store:
+store.subscribe(() => {
+  const state = JSON.stringify(store.getState().subreddits);
+  localStorage.setItem('state', state);
+})
