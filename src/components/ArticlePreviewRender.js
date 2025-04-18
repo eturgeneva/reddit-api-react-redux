@@ -1,13 +1,19 @@
 import React from 'react';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { addSubreddit, removeSubreddit, selectedSubreddits } from '../app/subredditsSlice';
 
 export default function ArticlePreviewRender(props) {
     const dataToRender = props.dataToRender;
     console.log('dataToRender', dataToRender);
+    const dispatch = useDispatch();
+    const subreddits = useSelector(selectedSubreddits);
+    console.log('subreddits list', subreddits);
 
-    function handleClick() {
-        
+    function handleClick(subreddit) {
+        dispatch(addSubreddit(subreddit));
+        console.log('subreddits list', subreddits);
     }
 
     return (
@@ -18,7 +24,7 @@ export default function ArticlePreviewRender(props) {
                         <div className="article" key={index} >
                             <div>Subreddit: {dataPiece.data.subreddit}</div>
 
-                            <button className="followButton">💗 Follow {dataPiece.data.subreddit}</button>
+                            <button onClick={() => handleClick(dataPiece.data.subreddit)} className="followButton">💗 Follow {dataPiece.data.subreddit}</button>
 
                             <div>Title: {dataPiece.data.title}</div>
                             <div>{dataPiece.data.author}</div>
