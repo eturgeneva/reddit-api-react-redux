@@ -16,7 +16,10 @@ export default function SearchResultsDisplay(props) {
 
     useEffect(() => {
         props.redditClient.search(searchQuery)
-        .then(responseObj => setSearchResults(responseObj.data.children));
+        .then(responseObj => {
+            const searchMatches = responseObj.data.children.filter(article => article.data.title.includes(searchQuery));
+            setSearchResults(searchMatches);
+        })
 
     }, [searchQuery]);
 
