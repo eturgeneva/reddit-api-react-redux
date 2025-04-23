@@ -1,10 +1,10 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Article from '../components/CurrentArticle';
+import Article from './CurrentArticle';
 // import ArticleRender from '../components/ArticlePreviewRender';
-import ArticlePreviewRender from '../components/ArticlePreviewRender';
-import CurrentArticle from '../components/CurrentArticle';
+import ArticlePreviewRender from './ArticlePreviewRender';
+import CurrentArticle from './CurrentArticle';
 
 export default function ArticlePreviews(props) {
     const [articlePreviews, setArticlePreviews] = useState(null);

@@ -1,5 +1,5 @@
 import React from 'react';
-import Search from '../features/Search.js';
+import Search from './Search.js';
 
 export default function Header() {
     return (

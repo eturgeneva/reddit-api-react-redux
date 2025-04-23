@@ -5,7 +5,7 @@ import './App.css';
 // Routing:
 import Homepage from './components/Homepage.js';
 import { Reddit } from './reddit.js';
-import ArticlePreviews from './features/ArticlePreviews.js';
+import ArticlePreviews from './components/ArticlePreviews.js';
 import CurrentArticle from './components/CurrentArticle.js';
 import SearchResultsDisplay from './components/SearchResultsDisplay.js';
 
