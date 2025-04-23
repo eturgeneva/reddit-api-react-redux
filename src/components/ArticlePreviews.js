@@ -1,26 +1,17 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Article from './CurrentArticle';
-// import ArticleRender from '../components/ArticlePreviewRender';
 import ArticlePreviewRender from './ArticlePreviewRender';
-import CurrentArticle from './CurrentArticle';
 
 export default function ArticlePreviews(props) {
     const [articlePreviews, setArticlePreviews] = useState(null);
     console.log('ArticlePreviews props', props);
-
-    // const subredditName = props.subreddit;
-    // console.log('useParams', useParams());
     const { subreddit } = useParams();
 
     useEffect(() => {
-        // props.redditClient.fetchArticlePreviews('TurtleFacts')
-        // props.redditClient.fetchArticlePreviews('popular')
         props.redditClient.fetchArticlePreviews(subreddit)
         .then(responseObj => {
             console.log('responseObj in ArticlePreviews', responseObj);
-            // setArticlePreviews(responseObj);
             setArticlePreviews(responseObj.data.children);
         })
     }, [subreddit]);

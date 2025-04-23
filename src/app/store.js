@@ -7,7 +7,7 @@ export const store = configureStore({
   },
 });
 
-// Updates if somethings changes in store:
+// Updates if something changes in store:
 store.subscribe(() => {
   const state = JSON.stringify(store.getState().subreddits);
   localStorage.setItem('state', state);

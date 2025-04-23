@@ -1,15 +1,15 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate, createSearchParams, useParams, useSearchParams} from 'react-router-dom';
 
 export default function Search () {
 
     const [searchParams, setSearchParams] = useSearchParams();
-    console.log('searchParams', searchParams.get('q'));
     const [searchInput, setSearchInput] = useState(searchParams.get('q'));
     const navigate = useNavigate();
+
+    console.log('searchParams', searchParams.get('q'));
     console.log('navigate', navigate);
-    // const { subreddit } = useParams();
 
     function submitHandler(e) {
         e.preventDefault();
@@ -19,7 +19,7 @@ export default function Search () {
         };
 
         const queryString = createSearchParams(query);
-        console.log('queryString', queryString);
+        // console.log('queryString', queryString);
 
         navigate({
             pathname: `/search/`,
@@ -39,12 +39,5 @@ export default function Search () {
                 🔍
             </button>
         </form>
-
-        // <div className="searchForm">
-        //     <input onChange={e => setSearchInput(e.target.value)} className="search" type="text" placeholder="Search"/>
-        //     <button onClick={submitHandler} className="searchButton">
-        //         🔍
-        //     </button>
-        // </div>
     )
 }

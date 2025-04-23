@@ -1,18 +1,16 @@
 import React from 'react';
-import { useSearchParams, useParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import ArticlePreviewRender from './ArticlePreviewRender';
 
 export default function SearchResultsDisplay(props) {
 
     const [searchResults, setSearchResults] = useState(null);
-
     const [searchParams, setSearchParams] = useSearchParams();
+    const searchQuery = searchParams.get('q');
+
     console.log('searchParams', searchParams);
     console.log('searchParams get', searchParams.get('q'));
-
-    const searchQuery = searchParams.get('q');
-    // const { subreddit } = useParams();
 
     useEffect(() => {
         props.redditClient.search(searchQuery)
