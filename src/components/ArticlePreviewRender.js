@@ -35,7 +35,7 @@ export default function ArticlePreviewRender(props) {
                             </div>
 
                             <div className="articleAuthor">By <span>{dataPiece.data.author}</span></div>
-                            <div>{dataPiece.data.title}</div>
+                            <div className="articleTitle">{dataPiece.data.title}</div>
                             {/* <div>Permalink: {dataPiece.data.permalink}</div> */}
                             {/* <div>{dataPiece.data.subreddit}</div> */}
                             {/* <div>Thumbnail: {dataPiece.data.thumbnail}</div> */}

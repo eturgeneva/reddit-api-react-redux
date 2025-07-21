@@ -142,13 +142,16 @@ main {
   padding: 1rem;
   /* background-color: rgb(119, 131, 131); */
   /* background: linear-gradient(rgb(143, 143, 143), rgb(187, 187, 187)); */
-  background-color: rgba(255, 255, 255, 0.5);
+  /* background-color: rgba(255, 255, 255, 0.5); */
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2));
   border-radius: 10px;
 }
 
 .articleHeader {
   display: flex;
   justify-content: space-between;
+  /* background-color: rgba(255, 255, 255, 0.5); */
+  padding: 0;
 }
 
 .articleSubreddit {
@@ -158,6 +161,10 @@ main {
 .articleAuthor span {
   color: rgb(101, 2, 162);
   font-weight: 600;
+}
+
+.articleTitle {
+  margin-top: 1rem;
 }
 
 .articleDetails {

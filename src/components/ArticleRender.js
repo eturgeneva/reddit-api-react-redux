@@ -11,7 +11,7 @@ export default function ArticleRender(props) {
                         <div className="articleBody" key={index}>
                             <h3 class="articleSubreddit">r/{dataPiece.data.subreddit}</h3>
                             <div class="articleAuthor">By <span>{dataPiece.data.author}</span></div>
-                            <div>{dataPiece.data.title}</div>
+                            <div className="articleTitle">{dataPiece.data.title}</div>
                             {/* <div>Permalink: {dataPiece.data.permalink}</div> */}
                             {dataPiece.data.preview?.images && <img className="articleImage" src={dataPiece.data.preview.images[0].source.url.replaceAll('&amp;', '&')}></img>}
                             {dataPiece.data.media_metadata && <img className="articleImage" src={Object.values(dataPiece.data.media_metadata)[0].p[3].u.replaceAll('&amp;', '&')}/>}
