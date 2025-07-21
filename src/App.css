@@ -25,6 +25,7 @@ a, a:visited, a:hover, a:active {
   pointer-events: none;
   font-family: 'Bitcount';
   font-weight: 300;
+  /* margin-left: 10rem; */
 }
 
 /* @media (prefers-reduced-motion: no-preference) {
@@ -34,40 +35,43 @@ a, a:visited, a:hover, a:active {
 } */
 
 .appHeader {
-  /* display: grid;
-  grid-template-columns: repeat(3, 1fr); */
+  /* display: flex; */
+  /* justify-content: space-between; */
+  background-color: blanchedalmond;
+  width: 100%;
+  margin: 0 auto;
+  /* height: 4rem; */
+  /* align-items: center; */
+  /* padding: 0 12rem; */
+  font-size: calc(10px + 2vmin);
+}
+
+.appHeader div {
   display: flex;
-  justify-content: space-between;
-  /* flex-direction: column; */
   width: 80%;
   margin: 0 auto;
-  height: 4rem;
-  align-items: center;
-  /* justify-content: center; */
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
 }
 
 .App-link {
   color: rgb(112, 76, 182);
 }
 
-/* @keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-} */
- main {
+.searchForm {
+   display: flex;
+   align-items: center;
+}
+
+.search {
+  height: 2rem;
+}
+
+main {
   display: flex;
   width: 80%;
   margin: 0 auto;
   /* justify-content: center; */
- }
+}
 
 /* .timeline {
   width: 80%;
