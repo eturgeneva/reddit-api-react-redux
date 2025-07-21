@@ -5,17 +5,8 @@
 }
 
 body {
-  /* My fav */
-  /* background: #EEAECA; */
-  /* background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(247, 176, 241, 1) 27%, rgba(212, 178, 211, 1) 54%, rgba(148, 187, 233, 1) 100%); */
-
   background: #cbaeee;
   background: linear-gradient(65deg, rgba(203, 174, 238, 1) 0%, rgba(200, 180, 215, 1) 43%, rgba(148, 187, 233, 1) 100%);
-  
-  
-  /* background: #EEAECA; */
-  /* background: linear-gradient(65deg, rgba(238, 174, 202, 1) 0%, rgba(200, 180, 215, 1) 43%, rgba(148, 187, 233, 1) 100%); */
-
 }
 
 a {
@@ -23,7 +14,6 @@ a {
 }
 
 a.active {
-  /* background-color: rgb(163, 163, 163); */
   background-color: rgb(160, 199, 244);
   width: 90%;
   margin: 0.5rem 0;
@@ -39,6 +29,8 @@ a, a:visited, a:hover, a:active {
   text-align: center;
 }
 
+/* Header */
+
 .appLogo {
   pointer-events: none;
   font-family: 'Bitcount';
@@ -47,7 +39,6 @@ a, a:visited, a:hover, a:active {
 }
 
 .appHeader {
-  /* background-color: blanchedalmond; */
   position: fixed;
   top: 0;
   left: 0;
@@ -55,8 +46,6 @@ a, a:visited, a:hover, a:active {
   background: #EEAECA;
   background: linear-gradient(65deg, rgba(238, 174, 202, 1) 0%, rgba(200, 180, 215, 1) 43%, rgba(148, 187, 233, 1) 100%);
   width: 100%;
-  /* width: 70%; */
-  /* border-radius: 20px 20px 0 0; */
   margin: 0 auto;
   font-size: calc(10px + 2vmin);
 }
@@ -66,12 +55,6 @@ a, a:visited, a:hover, a:active {
   width: 70%;
   margin: 0 auto;
   justify-content: space-between;
-  /* justify-content: flex-start; */
-  /* gap: 5rem; */
-}
-
-.App-link {
-  color: rgb(112, 76, 182);
 }
 
 .searchForm {
@@ -90,42 +73,23 @@ a, a:visited, a:hover, a:active {
   border-radius: 0 10px 10px 0;
 }
 
+/* Main */
+
 main {
   display: flex;
   width: 70%;
   margin: 3.3rem auto 0;
-  /* margin: 3rem auto 0; */
   font-family: 'Inter';
   align-items: flex-start;
   min-height: 100vh;
-  /* height: 100%; */
-
 }
-
-/* main {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas: 
-    "main subreddits";
-  width: 70%;
-  margin: 4rem auto 0;
-  font-family: 'Inter';
-} */
 
 /* Subreddits List */
 
 .subreddits {
-  /* grid-area: subreddits; */
-  /* position: fixed; */
   position: sticky;
-  /* top: 4.8rem; */
   top: 6.2rem;
   right: 0;
-  /* bottom: 0; */
-  /* min-height: 100vh; */
-  /* height: fit-content; */
-  /* height: 100%; */
   height: calc(100vh - 4.8rem);
   display: flex;
   flex-direction: column;
@@ -144,31 +108,18 @@ main {
 }
 
 .subreddits a:hover {
-  /* background-color: rgb(112, 112, 112); */
-  /* background-color: rgb(160, 199, 244); */
-  /* background-color: rgb(173, 180, 255); */
   background-color: rgb(182, 211, 244);
-  
 }
 
 /* Articles */
 
-.articlePreviews {
-  /* grid-area: main; */
-}
-
 .articlePreviews, .selectedArticle {
   width: 80%;
-  /* margin: 0 auto; */
 }
 
 .article, .articleBody {
-  /* width: 80%; */
   margin: 3rem auto;
   padding: 1rem 2rem;
-  /* background-color: rgb(119, 131, 131); */
-  /* background: linear-gradient(rgb(143, 143, 143), rgb(187, 187, 187)); */
-  /* background-color: rgba(255, 255, 255, 0.5); */
   background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2));
   border-radius: 10px;
 }
@@ -176,7 +127,6 @@ main {
 .articleHeader {
   display: flex;
   justify-content: space-between;
-  /* background-color: rgba(255, 255, 255, 0.5); */
   padding: 0;
 }
 
@@ -202,7 +152,6 @@ main {
 
 .articleStats {
   display: flex;
-  /* width: 40%; */
 }
 
 .articleStats div {
@@ -210,7 +159,6 @@ main {
 }
 
 .articleImagePreview {
-  /* max-width: 15rem; */
   max-width: 18rem;
   border-radius: 10px;
   margin-top: 1rem;
@@ -222,20 +170,7 @@ main {
   margin-top: 1rem;
 }
 
-/* .comment {
-  padding: 1rem;
-  background-color: beige;
-} */
-
-.comment {
-    /* margin-left: calc(var(--depth) * 20px); */
-    /* background-color: hsl(210, 100%, calc(95% - var(--depth) * 5%)); */
-    /* padding: 1rem 2rem; */
-    /* padding-left: calc(var(--depth) * 20px); */
-    /* border: 1px solid #ccc; */
-    /* border-radius: 10px; */
-    /* margin: 0.5rem; */
-}
+/* Comments */
 
 .commentAuthor {
   color: grey;
@@ -251,6 +186,8 @@ main {
   padding-bottom: 1rem;
 }
 
+/* Buttons */
+
 button {
   padding: 0.5rem;
   border-radius: 10px;
@@ -263,9 +200,4 @@ button:hover {
 
 .unfollowButton {
   color: rgb(63, 63, 63);
-  /* background-color: rgba(63, 63, 63, 0); */
-  /* border: 1px white solid; */
-
-  /* background-color: rgb(205, 205, 205); */
-  /* border: 1px rgb(173, 173, 173) solid; */
 }

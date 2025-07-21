@@ -6,7 +6,6 @@ export default function Header() {
     return (
         <header className="appHeader">
             <div>
-                {/* <h1 className="appLogo">SubReddit</h1> */}
                 <Link to="/">
                     <h1 className="appLogo" >SubReddit</h1>
                 </Link>

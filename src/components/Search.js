@@ -19,7 +19,6 @@ export default function Search () {
         };
 
         const queryString = createSearchParams(query);
-        // console.log('queryString', queryString);
 
         navigate({
             pathname: `/search/`,
