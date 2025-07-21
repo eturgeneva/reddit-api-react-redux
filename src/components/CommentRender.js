@@ -1,7 +1,16 @@
 import React from 'react';
 
-export default function CommentRender({ dataToRender, depth = 0 }) {
+export default function CommentRender({ dataToRender, loading, depth = 0 }) {
     console.log('comments to render', dataToRender);
+
+    if (loading) {
+        return (
+            <div className="loadingContainer">
+                <div className="spinner"></div>
+                <div>Loading comments...</div>
+            </div>
+        );
+    }
 
     return (
         <div className={`articleComments depth-${depth}`}>
