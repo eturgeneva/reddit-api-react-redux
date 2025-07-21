@@ -24,16 +24,17 @@ export default function ArticlePreviewRender(props) {
                 return (
                         <div className="article" key={index} >
                             <div className="articleHeader">
-                                <h3>Subreddit: <span className="articleSubreddit">{dataPiece.data.subreddit}</span></h3>
+                                <h3 className="articleSubreddit">r/{dataPiece.data.subreddit}</h3>
 
                                 {subreddits.subreddits.includes(dataPiece.data.subreddit) ?
-                                    <button onClick={() => unfollow(dataPiece.data.subreddit)} className="followButton unfollowButton">💔 Unfollow {dataPiece.data.subreddit}</button>
+                                    // <button onClick={() => unfollow(dataPiece.data.subreddit)} className="followButton unfollowButton">💔 Unfollow {dataPiece.data.subreddit}</button>
+                                    <button onClick={() => unfollow(dataPiece.data.subreddit)} className="followButton unfollowButton">✖ Unfollow r/{dataPiece.data.subreddit}</button>
                                     :
-                                    <button onClick={() => follow(dataPiece.data.subreddit)} className="followButton">💗 Follow {dataPiece.data.subreddit}</button>
+                                    <button onClick={() => follow(dataPiece.data.subreddit)} className="followButton">💗 Follow r/{dataPiece.data.subreddit}</button>
                                 }
                             </div>
 
-                            <div>By {dataPiece.data.author}</div>
+                            <div className="articleAuthor">By <span>{dataPiece.data.author}</span></div>
                             <div>{dataPiece.data.title}</div>
                             {/* <div>Permalink: {dataPiece.data.permalink}</div> */}
                             {/* <div>{dataPiece.data.subreddit}</div> */}

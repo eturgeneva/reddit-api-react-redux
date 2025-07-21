@@ -64,6 +64,13 @@ a, a:visited, a:hover, a:active {
 
 .search {
   height: 2rem;
+  border-radius: 5px 0 0 5px;
+  border: none;
+  padding: 1rem;
+}
+
+.searchButton {
+  border-radius: 0 5px 5px 0;
 }
 
 main {
@@ -88,8 +95,14 @@ main {
 }
 
 .subreddit {
-  height: 2rem;
+  width: 90%;
   margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.subreddit:hover {
+  background-color: rgb(121, 121, 121);
 }
 
 .articlePreviews, .selectedArticle {
@@ -112,6 +125,11 @@ main {
 }
 
 .articleSubreddit {
+  font-weight: 600;
+}
+
+.articleAuthor span {
+  color: rgb(101, 2, 162);
   font-weight: 600;
 }
 
@@ -144,17 +162,28 @@ main {
   margin-top: 1rem;
 }
 
-.comment {
+/* .comment {
   padding: 1rem;
-}
-
-.articleComments div {
   background-color: beige;
-  margin: 0.2rem;
+} */
+
+.comment {
+    /* margin-left: calc(var(--depth) * 20px); */
+    /* background-color: hsl(210, 100%, calc(95% - var(--depth) * 5%)); */
+    /* padding: 1rem 2rem; */
+    /* padding-left: calc(var(--depth) * 20px); */
+    /* border: 1px solid #ccc; */
+    /* border-radius: 10px; */
+    /* margin: 0.5rem; */
 }
 
-.articleComments:n-th-child(){
-  border: 1px red solid;
+.commentAuthor {
+  color: grey;
+}
+
+.commentAuthor span {
+  color: rgb(87, 87, 235);
+  font-weight: 600;
 }
 
 button {
@@ -168,6 +197,7 @@ button:hover {
 }
 
 .unfollowButton {
+  color: rgb(63, 63, 63);
   background-color: rgb(143, 143, 143);
-  border: 1px rgb(53, 53, 53) solid;
+  border: 1px rgb(105, 105, 105) solid;
 }

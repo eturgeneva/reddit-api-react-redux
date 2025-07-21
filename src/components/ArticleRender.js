@@ -9,8 +9,8 @@ export default function ArticleRender(props) {
             {dataToRender && dataToRender.map((dataPiece, index) => {
                 return (
                         <div className="articleBody" key={index}>
-                            <h3 class="articleSubreddit">{dataPiece.data.subreddit}</h3>
-                            <div>By {dataPiece.data.author}</div>
+                            <h3 class="articleSubreddit">r/{dataPiece.data.subreddit}</h3>
+                            <div class="articleAuthor">By <span>{dataPiece.data.author}</span></div>
                             <div>{dataPiece.data.title}</div>
                             {/* <div>Permalink: {dataPiece.data.permalink}</div> */}
                             {dataPiece.data.preview?.images && <img className="articleImage" src={dataPiece.data.preview.images[0].source.url.replaceAll('&amp;', '&')}></img>}
