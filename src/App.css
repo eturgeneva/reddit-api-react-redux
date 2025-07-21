@@ -61,9 +61,10 @@ a, a:visited, a:hover, a:active {
 
 .appHeader div {
   display: flex;
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: flex-start;
 }
 
 .App-link {
@@ -77,42 +78,55 @@ a, a:visited, a:hover, a:active {
 
 .search {
   height: 2rem;
-  border-radius: 5px 0 0 5px;
+  border-radius: 10px 0 0 10px;
   border: none;
   padding: 1rem;
 }
 
 .searchButton {
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 10px 10px 0;
 }
 
 main {
   display: flex;
-  width: 80%;
-  margin: 4rem auto 0;
+  width: 70%;
+  margin: 3.3rem auto 0;
   font-family: 'Inter';
-  /* justify-content: center; */
+  align-items: flex-start;
+  min-height: 100vh;
+  /* height: 100%; */
+
 }
 
-/* .timeline {
-  width: 80%;
+/* main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "main subreddits";
+  width: 70%;
+  margin: 4rem auto 0;
+  font-family: 'Inter';
 } */
 
+/* Subreddits List */
+
 .subreddits {
-  position: fixed;
-  top: 4rem;
+  /* grid-area: subreddits; */
+  /* position: fixed; */
+  position: sticky;
+  top: 4.8rem;
   right: 0;
-  bottom: 0;
+  /* bottom: 0; */
+  /* min-height: 100vh; */
+  /* height: fit-content; */
+  /* height: 100%; */
+  height: calc(100vh - 4.8rem);
   display: flex;
   flex-direction: column;
-  width: 15%;
-  /* background: linear-gradient(rgb(143, 143, 143), rgb(187, 187, 187)); */
-  background-color: rgba(255, 255, 255, 0.5);
-  /* margin: 1.5rem; */
-  /* margin-left: 1.5rem; */
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2));
   margin-top: 0.8rem;
-  /* margin-right: 7rem; */
-  border-radius: 10px 0;
+  border-radius: 10px 10px 0 0;
   padding: 1rem;
 }
 
@@ -131,6 +145,12 @@ main {
   
 }
 
+/* Articles */
+
+.articlePreviews {
+  /* grid-area: main; */
+}
+
 .articlePreviews, .selectedArticle {
   width: 80%;
   /* margin: 0 auto; */
@@ -139,7 +159,7 @@ main {
 .article, .articleBody {
   /* width: 80%; */
   margin: 1.5rem auto;
-  padding: 1rem;
+  padding: 1rem 2rem;
   /* background-color: rgb(119, 131, 131); */
   /* background: linear-gradient(rgb(143, 143, 143), rgb(187, 187, 187)); */
   /* background-color: rgba(255, 255, 255, 0.5); */
@@ -227,7 +247,7 @@ main {
 
 button {
   padding: 0.5rem;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
 }
 
@@ -237,7 +257,6 @@ button:hover {
 
 .unfollowButton {
   color: rgb(63, 63, 63);
-  /* background-color: rgb(143, 143, 143); */
-  background-color: rgb(205, 205, 205);
+  /* background-color: rgb(205, 205, 205); */
   /* border: 1px rgb(173, 173, 173) solid; */
 }
