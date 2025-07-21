@@ -13,18 +13,18 @@ export default function CommentRender({ dataToRender, depth = 0 }) {
                         key={index}
                         style={{
                             marginLeft: `${depth * 0.4}rem`,
-                            marginTop: '1.5rem',
+                            marginTop: '1rem',
                             // backgroundColor: `hsl(210, 100%, ${95 - depth * 5}%)`,
                             paddingLeft: '1rem',
-                            paddingTop: '1rem',
-                            borderLeft: '1px solid #ccc',
-                            borderTop: '1px solid #ccc',
-                            borderRadius: '10px 0 0 0',
-                            // background: 'linear-gradient(rgb(114, 114, 114), rgb(187, 187, 187))',
-                            // boxShadow: '2px 2px 10px #ccc'
+                            // paddingTop: '1rem',
+                            // paddingBottom: '1rem',
+                            // borderLeft: '1px solid #ccc',
+                            // borderTop: '1px solid #ccc',
+                            borderRadius: '10px',
+                            backgroundColor: 'hsla(210, 100%, 95%, 0.2)'
                         }}>
                             <div className="commentAuthor"><span>{dataPiece.data.author}</span> wrote:</div>
-                            <div>Comment: {dataPiece.data.body}</div>
+                            <div className="commentText">{dataPiece.data.body}</div>
                             {dataPiece.data.replies?.data?.children?.length > 0 && (
                                 <CommentRender 
                                     dataToRender={dataPiece.data.replies.data.children}

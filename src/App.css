@@ -5,9 +5,17 @@
 }
 
 body {
-  /* background-color: rgb(249, 249, 249); */
- background: #EEAECA;
-background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(247, 176, 241, 1) 27%, rgba(212, 178, 211, 1) 54%, rgba(148, 187, 233, 1) 100%);
+  /* My fav */
+  /* background: #EEAECA; */
+  /* background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(247, 176, 241, 1) 27%, rgba(212, 178, 211, 1) 54%, rgba(148, 187, 233, 1) 100%); */
+
+  background: #cbaeee;
+  background: linear-gradient(65deg, rgba(203, 174, 238, 1) 0%, rgba(200, 180, 215, 1) 43%, rgba(148, 187, 233, 1) 100%);
+  
+  
+  /* background: #EEAECA; */
+  /* background: linear-gradient(65deg, rgba(238, 174, 202, 1) 0%, rgba(200, 180, 215, 1) 43%, rgba(148, 187, 233, 1) 100%); */
+
 }
 
 a {
@@ -15,7 +23,8 @@ a {
 }
 
 a.active {
-  background-color: rgb(163, 163, 163);
+  /* background-color: rgb(163, 163, 163); */
+  background-color: rgb(160, 199, 244);
   width: 90%;
   margin: 0.5rem 0;
   padding: 0.5rem;
@@ -31,28 +40,22 @@ a, a:visited, a:hover, a:active {
 }
 
 .appLogo {
-  /* height: 40vmin; */
   pointer-events: none;
   font-family: 'Bitcount';
   font-weight: 300;
-  /* margin-left: 10rem; */
+  color: white;
 }
 
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
-} */
-
 .appHeader {
-  /* display: flex; */
-  /* justify-content: space-between; */
-  background-color: blanchedalmond;
+  /* background-color: blanchedalmond; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #EEAECA;
+  background: linear-gradient(65deg, rgba(238, 174, 202, 1) 0%, rgba(200, 180, 215, 1) 43%, rgba(148, 187, 233, 1) 100%);
   width: 100%;
   margin: 0 auto;
-  /* height: 4rem; */
-  /* align-items: center; */
-  /* padding: 0 12rem; */
   font-size: calc(10px + 2vmin);
 }
 
@@ -86,7 +89,8 @@ a, a:visited, a:hover, a:active {
 main {
   display: flex;
   width: 80%;
-  margin: 0 auto;
+  margin: 4rem auto 0;
+  font-family: 'Inter';
   /* justify-content: center; */
 }
 
@@ -95,14 +99,20 @@ main {
 } */
 
 .subreddits {
+  position: fixed;
+  top: 4rem;
+  right: 0;
+  bottom: 0;
   display: flex;
   flex-direction: column;
-  width: 25%;
-  background: linear-gradient(rgb(143, 143, 143), rgb(187, 187, 187));
+  width: 15%;
+  /* background: linear-gradient(rgb(143, 143, 143), rgb(187, 187, 187)); */
+  background-color: rgba(255, 255, 255, 0.5);
   /* margin: 1.5rem; */
-  margin-left: 1.5rem;
-  margin-top: 1.5rem;
-  border-radius: 10px;
+  /* margin-left: 1.5rem; */
+  margin-top: 0.8rem;
+  /* margin-right: 7rem; */
+  border-radius: 10px 0;
   padding: 1rem;
 }
 
@@ -114,7 +124,11 @@ main {
 }
 
 .subreddits a:hover {
-  background-color: rgb(112, 112, 112);
+  /* background-color: rgb(112, 112, 112); */
+  /* background-color: rgb(160, 199, 244); */
+  /* background-color: rgb(173, 180, 255); */
+  background-color: rgb(182, 211, 244);
+  
 }
 
 .articlePreviews, .selectedArticle {
@@ -127,7 +141,8 @@ main {
   margin: 1.5rem auto;
   padding: 1rem;
   /* background-color: rgb(119, 131, 131); */
-  background: linear-gradient(rgb(143, 143, 143), rgb(187, 187, 187));
+  /* background: linear-gradient(rgb(143, 143, 143), rgb(187, 187, 187)); */
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
 }
 
@@ -191,11 +206,16 @@ main {
 
 .commentAuthor {
   color: grey;
+  padding-top: 1rem;
 }
 
 .commentAuthor span {
   color: rgb(87, 87, 235);
   font-weight: 600;
+}
+
+.commentText {
+  padding-bottom: 1rem;
 }
 
 button {
@@ -210,6 +230,7 @@ button:hover {
 
 .unfollowButton {
   color: rgb(63, 63, 63);
-  background-color: rgb(143, 143, 143);
-  border: 1px rgb(105, 105, 105) solid;
+  /* background-color: rgb(143, 143, 143); */
+  background-color: rgb(205, 205, 205);
+  /* border: 1px rgb(173, 173, 173) solid; */
 }
