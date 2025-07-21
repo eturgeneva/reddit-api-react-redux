@@ -158,6 +158,10 @@ main {
   padding: 0 1rem;
 }
 
+.selectedArticle .articleBody .articleStats {
+  margin-top: 1rem;
+}
+
 .articleImagePreview {
   max-width: 18rem;
   border-radius: 10px;
