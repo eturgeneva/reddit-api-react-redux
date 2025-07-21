@@ -97,7 +97,7 @@ main {
   /* margin: 0 auto; */
 }
 
-.article {
+.article, .articleBody {
   /* width: 80%; */
   margin: 1.5rem auto;
   padding: 1rem;
@@ -131,15 +131,30 @@ main {
   padding: 0 1rem;
 }
 
-.articleImage {
+.articleImagePreview {
   /* max-width: 15rem; */
   max-width: 18rem;
   border-radius: 10px;
   margin-top: 1rem;
 }
 
+.articleImage {
+  max-width: 25rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
 .comment {
   padding: 1rem;
+}
+
+.articleComments div {
+  background-color: beige;
+  margin: 0.2rem;
+}
+
+.articleComments:n-th-child(){
+  border: 1px red solid;
 }
 
 button {

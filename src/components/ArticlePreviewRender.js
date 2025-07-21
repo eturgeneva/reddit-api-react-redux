@@ -33,8 +33,8 @@ export default function ArticlePreviewRender(props) {
                                 }
                             </div>
 
-                            <div>{dataPiece.data.title}</div>
                             <div>By {dataPiece.data.author}</div>
+                            <div>{dataPiece.data.title}</div>
                             {/* <div>Permalink: {dataPiece.data.permalink}</div> */}
                             {/* <div>{dataPiece.data.subreddit}</div> */}
                             {/* <div>Thumbnail: {dataPiece.data.thumbnail}</div> */}
@@ -43,11 +43,11 @@ export default function ArticlePreviewRender(props) {
                             {/* {dataPiece.data.media_metadata && <img src={Object.values(dataPiece.data.media_metadata)[0].p[0].u.replaceAll('&amp;', '&')}/>} */}
 
                             <Link to={`${dataPiece.data.id}`}>
-                                {dataPiece.data.preview?.images && <img className="articleImage" src={dataPiece.data.preview.images[0].source.url.replaceAll('&amp;', '&')}></img>}
+                                {dataPiece.data.preview?.images && <img className="articleImagePreview" src={dataPiece.data.preview.images[0].source.url.replaceAll('&amp;', '&')}></img>}
                             </Link>
 
                              <Link to={`${dataPiece.data.id}`}>
-                                {dataPiece.data.media_metadata && <img src={Object.values(dataPiece.data.media_metadata)[0].p[0].u.replaceAll('&amp;', '&')}/>}
+                                {dataPiece.data.media_metadata && <img className="articleImagePreview" src={Object.values(dataPiece.data.media_metadata)[0].p[0].u.replaceAll('&amp;', '&')}/>}
                             </Link>
 
                             <div className="articleDetails">

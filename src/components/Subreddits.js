@@ -21,7 +21,8 @@ export default function Subreddits(props) {
                         <div className="subreddit" key={index}>
                             {/* <button onClick={() => handleClick(subreddit)}>🔷{subreddit}</button> */}
                             <Link to={subreddit}>
-                                🔷{subreddit}
+                                {/* 🔷{subreddit} */}
+                                {subreddit}
                             </Link>
                         </div>
                 )
