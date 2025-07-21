@@ -55,6 +55,8 @@ a, a:visited, a:hover, a:active {
   background: #EEAECA;
   background: linear-gradient(65deg, rgba(238, 174, 202, 1) 0%, rgba(200, 180, 215, 1) 43%, rgba(148, 187, 233, 1) 100%);
   width: 100%;
+  /* width: 70%; */
+  /* border-radius: 20px 20px 0 0; */
   margin: 0 auto;
   font-size: calc(10px + 2vmin);
 }
@@ -63,8 +65,9 @@ a, a:visited, a:hover, a:active {
   display: flex;
   width: 70%;
   margin: 0 auto;
-  /* justify-content: space-between; */
-  justify-content: flex-start;
+  justify-content: space-between;
+  /* justify-content: flex-start; */
+  /* gap: 5rem; */
 }
 
 .App-link {
@@ -91,6 +94,7 @@ main {
   display: flex;
   width: 70%;
   margin: 3.3rem auto 0;
+  /* margin: 3rem auto 0; */
   font-family: 'Inter';
   align-items: flex-start;
   min-height: 100vh;
@@ -126,6 +130,7 @@ main {
   flex-direction: column;
   background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2));
   margin-top: 0.8rem;
+  margin-left: 2rem;
   border-radius: 10px 10px 0 0;
   padding: 1rem;
 }
@@ -257,6 +262,9 @@ button:hover {
 
 .unfollowButton {
   color: rgb(63, 63, 63);
+  /* background-color: rgba(63, 63, 63, 0); */
+  /* border: 1px white solid; */
+
   /* background-color: rgb(205, 205, 205); */
   /* border: 1px rgb(173, 173, 173) solid; */
 }

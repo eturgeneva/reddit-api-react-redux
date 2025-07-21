@@ -36,12 +36,6 @@ export default function ArticlePreviewRender(props) {
 
                             <div className="articleAuthor">By <span>{dataPiece.data.author}</span></div>
                             <div className="articleTitle">{dataPiece.data.title}</div>
-                            {/* <div>Permalink: {dataPiece.data.permalink}</div> */}
-                            {/* <div>{dataPiece.data.subreddit}</div> */}
-                            {/* <div>Thumbnail: {dataPiece.data.thumbnail}</div> */}
-
-                            {/* {dataPiece.data.preview?.images && <img className="articleImage" src={dataPiece.data.preview.images[0].source.url.replaceAll('&amp;', '&')}></img>} */}
-                            {/* {dataPiece.data.media_metadata && <img src={Object.values(dataPiece.data.media_metadata)[0].p[0].u.replaceAll('&amp;', '&')}/>} */}
 
                             <Link to={`${dataPiece.data.id}`}>
                                 {dataPiece.data.preview?.images && <img className="articleImagePreview" src={dataPiece.data.preview.images[0].source.url.replaceAll('&amp;', '&')}></img>}
@@ -58,7 +52,7 @@ export default function ArticlePreviewRender(props) {
                                 <div className="articleStats">
                                     <div>👍 {dataPiece.data.ups}</div>
                                     <div>👎 {dataPiece.data.downs}</div>
-                                    {/* <div>💬 {dataPiece.data.num_comments}</div> */}
+
                                     <Link to={`${dataPiece.data.id}`}>
                                         <div>💬{dataPiece.data.num_comments}</div>
                                     </Link>
