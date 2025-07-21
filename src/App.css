@@ -20,9 +20,11 @@ a, a:visited, a:hover, a:active {
   text-align: center;
 }
 
-.App-logo {
+.appLogo {
   /* height: 40vmin; */
   pointer-events: none;
+  font-family: 'Bitcount';
+  font-weight: 300;
 }
 
 /* @media (prefers-reduced-motion: no-preference) {
@@ -31,15 +33,17 @@ a, a:visited, a:hover, a:active {
   }
 } */
 
-.App-header {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* display: flex; */
+.appHeader {
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
+  display: flex;
+  justify-content: space-between;
   /* flex-direction: column; */
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   height: 4rem;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   font-size: calc(10px + 2vmin);
 }
 
@@ -72,13 +76,16 @@ a, a:visited, a:hover, a:active {
 .subreddits {
   width: 25%;
   background: linear-gradient(rgb(143, 143, 143), rgb(187, 187, 187));
-  margin: 1.5rem;
+  /* margin: 1.5rem; */
+  margin-left: 1.5rem;
+  margin-top: 1.5rem;
   border-radius: 10px;
   padding: 1rem;
 }
 
 .subreddit {
   height: 2rem;
+  margin: 0.5rem 0;
 }
 
 .articlePreviews, .selectedArticle {

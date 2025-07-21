@@ -15,7 +15,7 @@ export default function Subreddits(props) {
 
     return (
         <div className="subreddits">
-            <h2>Subreddits</h2>
+            <h3>Subreddits you follow</h3>
             {subreddits && subreddits.subreddits.map((subreddit, index) => {
                 return (
                         <div className="subreddit" key={index}>

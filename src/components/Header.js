@@ -3,8 +3,8 @@ import Search from './Search.js';
 
 export default function Header() {
     return (
-        <header className="App-header">
-            <div className="App-logo">Logo</div>
+        <header className="appHeader">
+            <h1 className="appLogo">SubReddit</h1>
             <Search />
         </header>
     )

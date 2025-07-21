@@ -24,7 +24,7 @@ export default function ArticlePreviewRender(props) {
                 return (
                         <div className="article" key={index} >
                             <div className="articleHeader">
-                                <div>Subreddit: <span className="articleSubreddit">{dataPiece.data.subreddit}</span></div>
+                                <h3>Subreddit: <span className="articleSubreddit">{dataPiece.data.subreddit}</span></h3>
 
                                 {subreddits.subreddits.includes(dataPiece.data.subreddit) ?
                                     <button onClick={() => unfollow(dataPiece.data.subreddit)} className="followButton unfollowButton">💔 Unfollow {dataPiece.data.subreddit}</button>
