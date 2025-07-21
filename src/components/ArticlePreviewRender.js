@@ -23,28 +23,46 @@ export default function ArticlePreviewRender(props) {
             {dataToRender && dataToRender.map((dataPiece, index) => {
                 return (
                         <div className="article" key={index} >
-                            <div>Subreddit: {dataPiece.data.subreddit}</div>
+                            <div className="articleHeader">
+                                <div>Subreddit: <span className="articleSubreddit">{dataPiece.data.subreddit}</span></div>
 
-                            {subreddits.subreddits.includes(dataPiece.data.subreddit) ?
-                                <button onClick={() => unfollow(dataPiece.data.subreddit)} className="followButton">💔 Unfollow {dataPiece.data.subreddit}</button>
-                                :
-                                <button onClick={() => follow(dataPiece.data.subreddit)} className="followButton">💗 Follow {dataPiece.data.subreddit}</button>
-                            }
+                                {subreddits.subreddits.includes(dataPiece.data.subreddit) ?
+                                    <button onClick={() => unfollow(dataPiece.data.subreddit)} className="followButton unfollowButton">💔 Unfollow {dataPiece.data.subreddit}</button>
+                                    :
+                                    <button onClick={() => follow(dataPiece.data.subreddit)} className="followButton">💗 Follow {dataPiece.data.subreddit}</button>
+                                }
+                            </div>
 
-                            <div>Title: {dataPiece.data.title}</div>
-                            <div>{dataPiece.data.author}</div>
-                            <div>Permalink: {dataPiece.data.permalink}</div>
-                            <div>{dataPiece.data.subreddit}</div>
-                            <div>Thumbnail: {dataPiece.data.thumbnail}</div>
-                            {dataPiece.data.preview?.images && <img className="articleImage" src={dataPiece.data.preview.images[0].source.url.replaceAll('&amp;', '&')}></img>}
-                            {dataPiece.data.media_metadata && <img src={Object.values(dataPiece.data.media_metadata)[0].p[0].u.replaceAll('&amp;', '&')}/>}
-                            <div>Upvotes: {dataPiece.data.ups}</div>
-                            <div>Downvotes: {dataPiece.data.downs}</div>
-                            <div>Comments: {dataPiece.data.num_comments}</div>
+                            <div>{dataPiece.data.title}</div>
+                            <div>By {dataPiece.data.author}</div>
+                            {/* <div>Permalink: {dataPiece.data.permalink}</div> */}
+                            {/* <div>{dataPiece.data.subreddit}</div> */}
+                            {/* <div>Thumbnail: {dataPiece.data.thumbnail}</div> */}
+
+                            {/* {dataPiece.data.preview?.images && <img className="articleImage" src={dataPiece.data.preview.images[0].source.url.replaceAll('&amp;', '&')}></img>} */}
+                            {/* {dataPiece.data.media_metadata && <img src={Object.values(dataPiece.data.media_metadata)[0].p[0].u.replaceAll('&amp;', '&')}/>} */}
 
                             <Link to={`${dataPiece.data.id}`}>
-                                <button className="readMoreButton">Read more</button>
+                                {dataPiece.data.preview?.images && <img className="articleImage" src={dataPiece.data.preview.images[0].source.url.replaceAll('&amp;', '&')}></img>}
                             </Link>
+
+                             <Link to={`${dataPiece.data.id}`}>
+                                {dataPiece.data.media_metadata && <img src={Object.values(dataPiece.data.media_metadata)[0].p[0].u.replaceAll('&amp;', '&')}/>}
+                            </Link>
+
+                            <div className="articleDetails">
+                                <Link to={`${dataPiece.data.id}`}>
+                                    <button className="readMoreButton">Read more</button>
+                                </Link>
+                                <div className="articleStats">
+                                    <div>👍 {dataPiece.data.ups}</div>
+                                    <div>👎 {dataPiece.data.downs}</div>
+                                    {/* <div>💬 {dataPiece.data.num_comments}</div> */}
+                                    <Link to={`${dataPiece.data.id}`}>
+                                        <div>💬{dataPiece.data.num_comments}</div>
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                 )
             })}

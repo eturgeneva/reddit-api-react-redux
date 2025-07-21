@@ -19,9 +19,9 @@ export default function Subreddits(props) {
             {subreddits && subreddits.subreddits.map((subreddit, index) => {
                 return (
                         <div className="subreddit" key={index}>
-                            <button onClick={() => handleClick(subreddit)}>x</button>
+                            {/* <button onClick={() => handleClick(subreddit)}>🔷{subreddit}</button> */}
                             <Link to={subreddit}>
-                                {subreddit}
+                                🔷{subreddit}
                             </Link>
                         </div>
                 )
