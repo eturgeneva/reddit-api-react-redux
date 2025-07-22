@@ -11,13 +11,39 @@ export default function ArticlePreviewRender({ dataToRender, loading }) {
     const subreddits = useSelector(selectedSubreddits);
     console.log('subreddits list', subreddits);
 
-    if (loading) {
+    function ArticleSkeleton() {
         return (
-            <div className="articleBody loadingContainer">
-                <div className="spinner"></div>
-                <div>Loading articles...</div>
+            <div className="article">
+                <div className="skeleton skeletonSubreddit"></div>
+                <div className="skeleton skeletonTitle"></div>
+                <div className="skeleton skeletonImage"></div>
+                <div className="skeletonTextLine skeleton"></div>
+                {/* <div className="skeletonStats">
+                    <div className="skeleton skeletonStat"></div>
+                    <div className="skeleton skeletonStat"></div>
+                    <div className="skeleton skeletonStat"></div>
+                </div> */}
             </div>
-        )
+        );
+    }
+
+    if (loading) {
+        // Spinner:
+        // return (
+        //     <div className="articleBody loadingContainer">
+        //         <div className="spinner"></div>
+        //         <div>Loading articles...</div>
+        //     </div>
+        // )
+
+        // Skeleton:
+        return (
+            <>
+                {Array.from({ length: 5 }).map((_, index) => (
+                    <ArticleSkeleton key={index} />
+                ))}
+            </>
+        );
     }
 
     function follow(subreddit) {
