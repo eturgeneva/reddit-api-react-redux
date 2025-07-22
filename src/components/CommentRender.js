@@ -35,10 +35,12 @@ export default function CommentRender({ dataToRender, loading, depth = 0 }) {
                     className="comment"
                     style={{
                         marginTop: '1rem',
-                        marginLeft: `${comment._depth * 1.5}rem`,
+                        marginLeft: `${comment._depth * 1.8}rem`,
                         padding: '1rem',
                         borderRadius: '10px',
-                        backgroundColor: 'rgba(120, 142, 223, 0.2)'
+                        // backgroundColor: 'rgba(120, 142, 223, 0.2)',
+                        // backgroundColor: `rgba(120, 142, 223, ${comment._depth * 0.1})`,
+                        backgroundColor: `rgba(120, 142, 223, ${Math.max(0.25 - comment._depth * 0.05, 0.05)})`,
                     }}>
                             <div className="commentAuthor"><span>{comment.data.author}</span> wrote:</div>
                             <div className="commentText">{comment.data.body}</div>
