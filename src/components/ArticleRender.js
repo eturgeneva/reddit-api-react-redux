@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { formatDistanceToNowStrict } from 'date-fns';
 import ArticleSkeleton from './ArticleSkeleton.js';
 
@@ -30,8 +31,10 @@ export default function ArticleRender({ dataToRender, loading }) {
             {dataToRender && dataToRender.map((dataPiece, index) => {
                 return (
                         <div className="articleBody" key={index}>
-                            <h3 class="articleSubreddit">r/{dataPiece.data.subreddit}</h3>
-                            {/* <div class="articleAuthor">By <span>{dataPiece.data.author}</span></div> */}
+                            <Link to={`/${dataPiece.data.subreddit}`}>
+                                    <h3 className="articleSubreddit">r/{dataPiece.data.subreddit}</h3>
+                            </Link>
+                            {/* <h3 className="articleSubreddit">r/{dataPiece.data.subreddit}</h3> */}
                             <div className="articlePostedInfo">By <span className="articleAuthor">{dataPiece.data.author}</span> {formatDistanceToNowStrict(new Date(dataPiece.data.created_utc * 1000), { addSuffix: true })}</div>
                             <div className="articleTitle">{dataPiece.data.title}</div>
                             {/* <div>Permalink: {dataPiece.data.permalink}</div> */}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { formatDistanceToNowStrict } from 'date-fns';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { addSubreddit, removeSubreddit, selectedSubreddits } from '../app/subredditsSlice';
 import ArticleSkeleton from './ArticleSkeleton.js';
 
@@ -46,8 +46,11 @@ export default function ArticlePreviewRender({ dataToRender, loading }) {
                         <div className="article" key={index} >
                             <div className="articleHeader">
                                 <div>
-                                    <Link to={dataPiece.data.subreddit}>r/{dataPiece.data.subreddit}</Link>
-                                    <h3 className="articleSubreddit">r/{dataPiece.data.subreddit}</h3>
+                                    {/* <Link to={dataPiece.data.subreddit}>r/{dataPiece.data.subreddit}</Link> */}
+                                    <Link to={`/${dataPiece.data.subreddit}`}>
+                                            <h3 className="articleSubreddit">r/{dataPiece.data.subreddit}</h3>
+                                    </Link>
+                                    {/* <h3 className="articleSubreddit">r/{dataPiece.data.subreddit}</h3> */}
                                     <div className="articlePostedInfo">By <span className="articleAuthor">{dataPiece.data.author}</span> {formatDistanceToNowStrict(new Date(dataPiece.data.created_utc * 1000), { addSuffix: true })}</div>
                                 </div>
 
