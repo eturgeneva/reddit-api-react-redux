@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatDistanceToNowStrict } from 'date-fns';
 
 export default function ArticleRender({ dataToRender, loading }) {
     // const dataToRender = props.dataToRender;
@@ -24,7 +25,8 @@ export default function ArticleRender({ dataToRender, loading }) {
                 return (
                         <div className="articleBody" key={index}>
                             <h3 class="articleSubreddit">r/{dataPiece.data.subreddit}</h3>
-                            <div class="articleAuthor">By <span>{dataPiece.data.author}</span></div>
+                            {/* <div class="articleAuthor">By <span>{dataPiece.data.author}</span></div> */}
+                            <div className="articlePostedInfo">By <span className="articleAuthor">{dataPiece.data.author}</span> {formatDistanceToNowStrict(new Date(dataPiece.data.created_utc * 1000), { addSuffix: true })}</div>
                             <div className="articleTitle">{dataPiece.data.title}</div>
                             {/* <div>Permalink: {dataPiece.data.permalink}</div> */}
                             {dataPiece.data.preview?.images && <img className="articleImage" src={dataPiece.data.preview.images[0].source.url.replaceAll('&amp;', '&')}></img>}
