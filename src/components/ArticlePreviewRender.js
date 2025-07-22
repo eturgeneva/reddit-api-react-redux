@@ -35,6 +35,9 @@ export default function ArticlePreviewRender(props) {
                             </div>
 
                             <div className="articleAuthor">By <span>{dataPiece.data.author}</span></div>
+                            {/* <div>{dataPiece.data.created_utc}</div> */}
+                            {/* <div>{new Date(dataPiece.data.created_utc * 1000).toISOString()}</div> */}
+                            <div>{new Date(dataPiece.data.created_utc * 1000).toLocaleString()}</div>
                             <div className="articleTitle">{dataPiece.data.title}</div>
 
                             <Link to={`${dataPiece.data.id}`}>
