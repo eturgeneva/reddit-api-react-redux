@@ -4,12 +4,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addSubreddit, removeSubreddit, selectedSubreddits } from '../app/subredditsSlice';
 
-export default function ArticlePreviewRender(props) {
-    const dataToRender = props.dataToRender;
+export default function ArticlePreviewRender({ dataToRender, loading }) {
+    // const dataToRender = props.dataToRender;
     console.log('dataToRender', dataToRender);
     const dispatch = useDispatch();
     const subreddits = useSelector(selectedSubreddits);
     console.log('subreddits list', subreddits);
+
+    if (loading) {
+        return (
+            <div className="articleBody loadingContainer">
+                <div className="spinner"></div>
+                <div>Loading articles...</div>
+            </div>
+        )
+    }
 
     function follow(subreddit) {
         dispatch(addSubreddit(subreddit));

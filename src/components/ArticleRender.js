@@ -5,13 +5,8 @@ export default function ArticleRender({ dataToRender, loading }) {
     // const dataToRender = props.dataToRender;
     console.log('dataToRender', dataToRender);
 
-    // if (!dataToRender || dataToRender.length === 0) {
     if (loading) {
         return (
-            // <div className="articleBody">
-            //     Fetching article...
-            // </div>
-
             <div className="articleBody loadingContainer">
                 <div className="spinner"></div>
                 <div>Loading article...</div>
