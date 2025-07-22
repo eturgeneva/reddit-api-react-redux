@@ -14,21 +14,21 @@ export default function ArticlePreviewRender({ dataToRender, loading }) {
 
     if (loading) {
         // Spinner:
-        // return (
-        //     <div className="articleBody loadingContainer">
-        //         <div className="spinner"></div>
-        //         <div>Loading articles...</div>
-        //     </div>
-        // )
+        return (
+            <div className="articleBody loadingContainer">
+                <div className="spinner"></div>
+                <div>Loading articles...</div>
+            </div>
+        )
 
         // Skeleton:
-        return (
-            <>
-                {Array.from({ length: 5 }).map((_, index) => (
-                    <ArticleSkeleton key={index} />
-                ))}
-            </>
-        );
+        // return (
+        //     <>
+        //         {Array.from({ length: 5 }).map((_, index) => (
+        //             <ArticleSkeleton key={index} />
+        //         ))}
+        //     </>
+        // );
     }
 
     function follow(subreddit) {
@@ -46,6 +46,7 @@ export default function ArticlePreviewRender({ dataToRender, loading }) {
                         <div className="article" key={index} >
                             <div className="articleHeader">
                                 <div>
+                                    <Link to={dataPiece.data.subreddit}>r/{dataPiece.data.subreddit}</Link>
                                     <h3 className="articleSubreddit">r/{dataPiece.data.subreddit}</h3>
                                     <div className="articlePostedInfo">By <span className="articleAuthor">{dataPiece.data.author}</span> {formatDistanceToNowStrict(new Date(dataPiece.data.created_utc * 1000), { addSuffix: true })}</div>
                                 </div>

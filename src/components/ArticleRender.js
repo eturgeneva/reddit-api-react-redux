@@ -1,17 +1,28 @@
 import React from 'react';
 import { formatDistanceToNowStrict } from 'date-fns';
+import ArticleSkeleton from './ArticleSkeleton.js';
 
 export default function ArticleRender({ dataToRender, loading }) {
     // const dataToRender = props.dataToRender;
     console.log('dataToRender', dataToRender);
 
     if (loading) {
+        // Spinner:
         return (
             <div className="articleBody loadingContainer">
                 <div className="spinner"></div>
                 <div>Loading article...</div>
             </div>
         )
+
+        // Skeleton:
+        // return (
+        //     <>
+        //         {Array.from({ length: 5 }).map((_, index) => (
+        //             <ArticleSkeleton key={index} />
+        //         ))}
+        //     </>
+        // );
     }
 
     return (
