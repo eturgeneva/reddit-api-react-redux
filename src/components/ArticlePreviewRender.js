@@ -3,6 +3,7 @@ import { formatDistanceToNowStrict } from 'date-fns';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addSubreddit, removeSubreddit, selectedSubreddits } from '../app/subredditsSlice';
+import ArticleSkeleton from './ArticleSkeleton.js';
 
 export default function ArticlePreviewRender({ dataToRender, loading }) {
     // const dataToRender = props.dataToRender;
@@ -10,22 +11,6 @@ export default function ArticlePreviewRender({ dataToRender, loading }) {
     const dispatch = useDispatch();
     const subreddits = useSelector(selectedSubreddits);
     console.log('subreddits list', subreddits);
-
-    function ArticleSkeleton() {
-        return (
-            <div className="article">
-                <div className="skeleton skeletonSubreddit"></div>
-                <div className="skeleton skeletonTitle"></div>
-                <div className="skeleton skeletonImage"></div>
-                <div className="skeletonTextLine skeleton"></div>
-                {/* <div className="skeletonStats">
-                    <div className="skeleton skeletonStat"></div>
-                    <div className="skeleton skeletonStat"></div>
-                    <div className="skeleton skeletonStat"></div>
-                </div> */}
-            </div>
-        );
-    }
 
     if (loading) {
         // Spinner:
