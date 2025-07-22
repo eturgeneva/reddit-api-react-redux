@@ -60,6 +60,7 @@ a, a:visited, a:hover, a:active {
   width: 100%;
   margin: 0 auto;
   font-size: calc(10px + 2vmin);
+  border-bottom: 1px rgb(196, 196, 196) solid;
 }
 
 .appHeader div {
@@ -100,16 +101,28 @@ main {
 
 .subreddits {
   position: sticky;
-  top: 6.2rem;
+  /* top: 6.2rem; */
+  top: 4.9rem;
   right: 0;
   height: calc(100vh - 4.8rem);
   display: flex;
   flex-direction: column;
-  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2));
-  margin-top: 2.9rem;
+  align-items: flex-start;
+  /* background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2)); */
+  /* background-color: aliceblue; */
+  /* margin-top: 2.9rem; */
+  margin-top: 1.6rem;
   margin-left: 2rem;
-  border-radius: 10px 10px 0 0;
+  /* border-radius: 10px 10px 0 0; */
   padding: 1rem;
+  border-left: 1px rgb(196, 196, 196) solid;
+}
+
+.subreddits h3 {
+  color: #626262;
+  font-size: 0.9rem;
+  font-weight: 400;
+  padding: 0.5rem;
 }
 
 .subreddits a {
@@ -117,6 +130,7 @@ main {
   margin: 0.5rem 0;
   padding: 0.5rem;
   border-radius: 10px;
+  font-weight: 500;
 }
 
 .subreddits a:hover {
@@ -149,14 +163,16 @@ main {
 
 .articleSubreddit {
   font-weight: 600;
+  margin-bottom: 0.3rem;
 }
 
 .articleAuthor {
   color: rgb(101, 2, 162);
   font-weight: 600;
+  font-size: 0.9rem;
 }
 
-.articlePostedTime {
+.articlePostedInfo {
   color: #626262;
   font-size: 0.9rem;
 }
@@ -235,7 +251,7 @@ button {
   padding: 0.5rem;
   border-radius: 10px;
   border: none;
-  font-size: 0.9rem;
+  /* font-size: 0.9rem; */
 }
 
 button:hover {
@@ -244,6 +260,7 @@ button:hover {
 
 .unfollowButton {
   color: rgb(63, 63, 63);
+  height: 2rem;
 }
 
 .readMoreButton {

@@ -25,7 +25,10 @@ export default function ArticlePreviewRender(props) {
                 return (
                         <div className="article" key={index} >
                             <div className="articleHeader">
-                                <h3 className="articleSubreddit">r/{dataPiece.data.subreddit}</h3>
+                                <div>
+                                    <h3 className="articleSubreddit">r/{dataPiece.data.subreddit}</h3>
+                                    <div className="articlePostedInfo">By <span className="articleAuthor">{dataPiece.data.author}</span> {formatDistanceToNowStrict(new Date(dataPiece.data.created_utc * 1000), { addSuffix: true })}</div>
+                                </div>
 
                                 {subreddits.subreddits.includes(dataPiece.data.subreddit) ?
                                     // <button onClick={() => unfollow(dataPiece.data.subreddit)} className="followButton unfollowButton">💔 Unfollow {dataPiece.data.subreddit}</button>
@@ -35,8 +38,7 @@ export default function ArticlePreviewRender(props) {
                                 }
                             </div>
 
-                            <div>By <span className="articleAuthor">{dataPiece.data.author}</span> <span className="articlePostedTime">{formatDistanceToNowStrict(new Date(dataPiece.data.created_utc * 1000), { addSuffix: true })}</span></div>
-                            {/* <div>Posted {formatDistanceToNowStrict(new Date(dataPiece.data.created_utc * 1000), { addSuffix: true })}</div> */}
+                            {/* <div>By <span className="articleAuthor">{dataPiece.data.author}</span> <span className="articlePostedTime">{formatDistanceToNowStrict(new Date(dataPiece.data.created_utc * 1000), { addSuffix: true })}</span></div> */}
                             <div className="articleTitle">{dataPiece.data.title}</div>
 
                             <Link to={`${dataPiece.data.id}`}>
