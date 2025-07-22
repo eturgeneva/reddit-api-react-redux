@@ -24,7 +24,9 @@ export default function CommentRender({ dataToRender, loading, depth = 0 }) {
                             marginTop: '1rem',
                             paddingLeft: '1rem',
                             borderRadius: '10px',
-                            backgroundColor: 'hsla(210, 100%, 95%, 0.2)'
+                            // backgroundColor: 'hsla(210, 100%, 95%, 0.2)',
+                            // backgroundColor: 'hsla(252, 100.00%, 80.90%, 0.2)',
+                            backgroundColor: 'rgba(120, 142, 223, 0.2)'
                         }}>
                             <div className="commentAuthor"><span>{dataPiece.data.author}</span> wrote:</div>
                             <div className="commentText">{dataPiece.data.body}</div>
