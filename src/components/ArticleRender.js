@@ -34,7 +34,6 @@ export default function ArticleRender({ dataToRender, loading }) {
                             <Link to={`/${dataPiece.data.subreddit}`}>
                                     <h3 className="articleSubreddit">r/{dataPiece.data.subreddit}</h3>
                             </Link>
-                            {/* <h3 className="articleSubreddit">r/{dataPiece.data.subreddit}</h3> */}
                             <div className="articlePostedInfo">By <span className="articleAuthor">{dataPiece.data.author}</span> {formatDistanceToNowStrict(new Date(dataPiece.data.created_utc * 1000), { addSuffix: true })}</div>
                             <div className="articleTitle">{dataPiece.data.title}</div>
                             {/* <div>Permalink: {dataPiece.data.permalink}</div> */}

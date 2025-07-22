@@ -46,11 +46,9 @@ export default function ArticlePreviewRender({ dataToRender, loading }) {
                         <div className="article" key={index} >
                             <div className="articleHeader">
                                 <div>
-                                    {/* <Link to={dataPiece.data.subreddit}>r/{dataPiece.data.subreddit}</Link> */}
                                     <Link to={`/${dataPiece.data.subreddit}`}>
                                             <h3 className="articleSubreddit">r/{dataPiece.data.subreddit}</h3>
                                     </Link>
-                                    {/* <h3 className="articleSubreddit">r/{dataPiece.data.subreddit}</h3> */}
                                     <div className="articlePostedInfo">By <span className="articleAuthor">{dataPiece.data.author}</span> {formatDistanceToNowStrict(new Date(dataPiece.data.created_utc * 1000), { addSuffix: true })}</div>
                                 </div>
 
@@ -62,7 +60,6 @@ export default function ArticlePreviewRender({ dataToRender, loading }) {
                                 }
                             </div>
 
-                            {/* <div>By <span className="articleAuthor">{dataPiece.data.author}</span> <span className="articlePostedTime">{formatDistanceToNowStrict(new Date(dataPiece.data.created_utc * 1000), { addSuffix: true })}</span></div> */}
                             <div className="articleTitle">{dataPiece.data.title}</div>
 
                             <Link to={`${dataPiece.data.id}`}>
