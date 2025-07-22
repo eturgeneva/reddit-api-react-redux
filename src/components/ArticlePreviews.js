@@ -27,12 +27,6 @@ export default function ArticlePreviews(props) {
 
     console.log('turtleFacts article previews', articlePreviews);
 
-    // if (!articlePreviews) {
-    //     return (
-    //         <div>No data fetched</div>
-    //     )
-    // }
-
     return (
         <div className="articlePreviews">
             <ArticlePreviewRender dataToRender={articlePreviews || []} loading={isArticlePreviewsLoading}/>
