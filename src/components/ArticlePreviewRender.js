@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatDistanceToNowStrict } from 'date-fns';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addSubreddit, removeSubreddit, selectedSubreddits } from '../app/subredditsSlice';
@@ -34,10 +35,8 @@ export default function ArticlePreviewRender(props) {
                                 }
                             </div>
 
-                            <div className="articleAuthor">By <span>{dataPiece.data.author}</span></div>
-                            {/* <div>{dataPiece.data.created_utc}</div> */}
-                            {/* <div>{new Date(dataPiece.data.created_utc * 1000).toISOString()}</div> */}
-                            <div>{new Date(dataPiece.data.created_utc * 1000).toLocaleString()}</div>
+                            <div>By <span className="articleAuthor">{dataPiece.data.author}</span> <span className="articlePostedTime">{formatDistanceToNowStrict(new Date(dataPiece.data.created_utc * 1000), { addSuffix: true })}</span></div>
+                            {/* <div>Posted {formatDistanceToNowStrict(new Date(dataPiece.data.created_utc * 1000), { addSuffix: true })}</div> */}
                             <div className="articleTitle">{dataPiece.data.title}</div>
 
                             <Link to={`${dataPiece.data.id}`}>
